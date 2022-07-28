@@ -1,0 +1,12 @@
+.first-screen {
+  min-height: 100vh;
+  padding-top: 103px;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 120px;
+
+  & .container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

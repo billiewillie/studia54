@@ -4,7 +4,11 @@
 @import "utils/vars";
 @import "utils/general";
 
+// vendors
 @import "vendors/swiper";
 
 // blocks
-@import "blocks/main";
+@import "blocks/section-header";
+@import "blocks/header";
+@import "blocks/first-screen";
+@import "blocks/vip";

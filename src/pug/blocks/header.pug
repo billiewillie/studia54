@@ -1,2 +1,15 @@
-header.header 
-  | scroll down please
+header.header
+    .container
+        img(src="./img/logo.svg", alt="logo")
+        .menu
+            button.nav-tgl(type='button' aria-label='toggle menu')
+                // this span just for the three dividers in the hamburger button
+                span(aria-hidden='true')
+
+            nav.nav
+                // I don't care about the menu elements here so I will hide them
+                ul
+                    li element one
+                    li element two
+                    li element three
+                    li element four

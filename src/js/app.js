@@ -2,11 +2,18 @@ import Swiper, { Navigation, Pagination } from "swiper";
 import { gsap, Power2 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const menu = document.querySelector('.menu');
+const btn = menu.querySelector('.nav-tgl');
+
+btn.addEventListener('click', evt => {
+	menu.classList.toggle('active');
+})
+
 gsap.registerPlugin(ScrollTrigger);
 
-const revealContainers = document.querySelectorAll(".main-pic");
-const textContainer = document.querySelector(".main-text");
-const sliderContainer = document.querySelector(".main-slider");
+const revealContainers = document.querySelectorAll(".vip-pic");
+const textContainer = document.querySelector(".vip-text");
+const sliderContainer = document.querySelector(".vip-slider");
 
 function sliderReveal(sliderContainer) {
 	let tl = gsap.timeline({
@@ -109,13 +116,13 @@ function breakpointChecker() {
 }
 
 function enableDesktopSwiper() {
-	desktopSwiper = new Swiper(".main-slider", {
+	desktopSwiper = new Swiper(".vip-slider", {
 		modules: [Navigation, Pagination],
 		slidesPerView: 1,
 		speed: 700,
 
 		pagination: {
-			el: ".main-options__list",
+			el: ".vip-options__list",
 			clickable: true,
 			renderBullet: function (index, className) {
 				return `<li class="option ${className}">
@@ -131,7 +138,7 @@ function enableDesktopSwiper() {
 }
 
 function enableMobileSwiper() {
-	mobileSwiper = new Swiper(".main-slider", {
+	mobileSwiper = new Swiper(".vip-slider", {
 		modules: [Navigation, Pagination],
 		slidesPerView: 1,
 		speed: 500,

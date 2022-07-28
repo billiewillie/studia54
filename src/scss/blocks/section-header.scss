@@ -1,0 +1,35 @@
+.section-header {
+  padding-bottom: 8px;
+  margin-bottom: 42px;
+
+  @media (min-width: $md) {
+    margin-bottom: 103px;
+  }
+
+  & .container {
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: calc(100% - 48px);
+      height: 1px;
+      left: 24px;
+      bottom: -8px;
+      background: linear-gradient(270deg, rgba(224, 192, 160, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+
+      @media (min-width: $md) {
+        left: 46px;
+        width: calc(100% - 92px);
+      }
+
+      @media (min-width: $lg) {
+        left: 72px;
+        width: calc(100% - 144px);
+      }
+    }
+  }
+}

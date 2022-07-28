@@ -1,113 +1,115 @@
 body {
-	font-family: $font;
-	background-color: var(--black);
+  font-family: $font;
+  color: var(--white);
+  background-color: var(--black);
 }
 
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	min-height: 100vh;
-	overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .container {
-	width: 100%;
-	margin: 0 auto;
-	max-width: 1360px;
-	padding: 0 24px;
-	display: flex;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1360px;
+  padding: 0 24px;
+  display: flex;
 
-	@media (min-width: $md) {
-		padding: 0 46px;
-	}
+  @media (min-width: $md) {
+    padding: 0 46px;
+  }
 
-	@media (min-width: $lg) {
-		padding: 0 72px;
-	}
+  @media (min-width: $lg) {
+    padding: 0 72px;
+  }
 }
 
 h2.title {
-	font-family: $font_special;
-	text-transform: uppercase;
-	font-size: 20px;
-	line-height: 1.2;
-	letter-spacing: 1.02px;
+  font-family: $font_special;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 1.02px;
 
-	@media (min-width: $md) {
-		font-size: 40px;
-	}
+  @media (min-width: $md) {
+    font-size: 40px;
+  }
 }
 
 h4.special {
-	font-size: 16px;
-	font-weight: var(--light);
-	line-height: 21.6px;
-	color: rgba(255, 255, 255, 0.3);
-	letter-spacing: 1.05px;
+  font-size: 16px;
+  font-weight: var(--light);
+  line-height: 21.6px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1.05px;
 
-	@media (min-width: $md) {
-		font-size: 22px;
-		line-height: 29.7px;
-	}
+  @media (min-width: $md) {
+    font-size: 22px;
+    line-height: 29.7px;
+  }
 }
 
 button.button {
-	color: #000;
-	position: relative;
-	cursor: pointer;
-	font-size: 14px;
-	padding: 23px 0;
-	text-align: center;
-	line-height: 15.11px;
-	letter-spacing: 1.05px;
-	font-weight: var(--regular);
-	font-family: $font;
-	box-shadow: inset 0px 0px 0px #6a4d2f;
-	background: linear-gradient(93.58deg, #e0c0a0 0%, #b58555 95.83%), linear-gradient(93.58deg, #e0c0a0 0%, #eabe93 95.83%);
+  color: #000;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 23px 0;
+  text-align: center;
+  line-height: 15.11px;
+  letter-spacing: 1.05px;
+  font-weight: var(--regular);
+  font-family: $font;
+  box-shadow: inset 0px 0px 0px #6a4d2f;
+  background: linear-gradient(93.58deg, #e0c0a0 0%, #b58555 95.83%), linear-gradient(93.58deg, #e0c0a0 0%, #eabe93 95.83%);
 
-	@media (min-width: $md) {
-		padding: 21px 50px;
-		font-size: 16px;
-		line-height: 17.26px;
-	}
+  @media (min-width: $md) {
+    padding: 21px 50px;
+    font-size: 16px;
+    line-height: 17.26px;
+  }
 
-	&::before {
-		position: absolute;
-		display: block;
-		content: "";
-		width: 80%;
-		height: 100%;
-		left: 0;
-		right: 0;
-		margin: auto;
-		background: rgba(224, 192, 160, 0.2);
-		transition: background 0.3s ease;
-		-webkit-backface-visibility: hidden;
-		-moz-backface-visibility: hidden;
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
-		-webkit-filter: blur(50px);
-		-moz-filter: blur(50px);
-		-ms-filter: blur(50px);
-		filter: blur(50px);
-	}
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 80%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(224, 192, 160, 0.2);
+    transition: background 0.3s ease;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -webkit-filter: blur(50px);
+    -moz-filter: blur(50px);
+    -ms-filter: blur(50px);
+    filter: blur(50px);
+  }
 
-	&:hover::before {
-		background: rgba(224, 192, 160, 0.4);
-		filter: blur(50px);
-	}
+  &:hover::before {
+    background: rgba(224, 192, 160, 0.4);
+    filter: blur(50px);
+  }
 
-	&:active {
-		box-shadow: inset 0px 0px 200px #6a4d2f;
-		transition: box-shadow 0.1s ease;
-	}
+  &:active {
+    box-shadow: inset 0px 0px 200px #6a4d2f;
+    transition: box-shadow 0.1s ease;
+  }
 
-	&:active::before {
-		background: rgba(224, 192, 160, 0.05);
-	}
+  &:active::before {
+    background: rgba(224, 192, 160, 0.05);
+  }
 }
 
 .gold {
-	color: var(--gold);
+  color: var(--gold);
 }

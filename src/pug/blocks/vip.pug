@@ -1,16 +1,16 @@
-main.main 
-  .main-header
-    .container
-      h2.title.gold vip 
-      h4.special Limited edition
-  .main-content
-    .main-pic 
+include ../mixins/sectionHeader
+
+.vip
+  +sectionHeader("vip", "Limited edition")
+
+  .vip-content
+    .vip-pic
       picture
         source(media="(min-width: 768px)", srcset="./img/room-big.webp", type="image/webp")
         source(media="(min-width: 768px)", srcset="./img/room-big.jpg")
         source(srcset="./img/room.webp", type="image/webp")
         img(src="./img/room.jpg", alt="room", loading="lazy", width="100%", height="100%")
-    .main-text
+    .vip-text
       h3.text-title.gold Лимитированные изделия
       p.text 
         | Успешные профессиональные решения и идеи начинаются с правильной обстановки. 
@@ -18,7 +18,7 @@ main.main
         | но и является отражением характера своего хозяина. 
         | Мы предоставляем возможность приобрести лимитированное изделие, 
         | созданное с учетом заданных вами параметров.
-  .main-slider
+  .vip-slider
     .swiper-wrapper
       .swiper-slide(data-id="table1")
         picture
@@ -29,15 +29,15 @@ main.main
           source(srcset="./img/table2.webp", type="image/webp")
           img(src="./img/table2.png", alt="table", loading="lazy")
     .swiper-pagination
-  .main-options 
+  .vip-options
     .container
-      p.main-options__title Параметры, которые можно изменить по вашему желанию:
-      .main-options__block
-        .main-options__column 
-          p.main-options__column-title Cтолешница
-          ul.main-options__list 
+      p.vip-options__title Параметры, которые можно изменить по вашему желанию:
+      .vip-options__block
+        .vip-options__column
+          p.vip-options__column-title Cтолешница
+          ul.vip-options__list
                 
-  .main-footer 
+  .vip-footer
     .container
       p 
         span.gold Продемонстрируйте свой статус 
