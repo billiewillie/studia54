@@ -1,0 +1,46 @@
+main.main 
+  .main-header
+    .container
+      h2.title.gold vip 
+      h4.special Limited edition
+  .main-content
+    .main-pic 
+      picture
+        source(media="(min-width: 768px)", srcset="./img/room-big.webp", type="image/webp")
+        source(media="(min-width: 768px)", srcset="./img/room-big.jpg")
+        source(srcset="./img/room.webp", type="image/webp")
+        img(src="./img/room.jpg", alt="room", loading="lazy", width="100%", height="100%")
+    .main-text
+      h3.text-title.gold Лимитированные изделия
+      p.text 
+        | Успешные профессиональные решения и идеи начинаются с правильной обстановки. 
+        | Эргономичный и стильный, персонально подобранный рабочий стол не только способствует продуктивной работе, 
+        | но и является отражением характера своего хозяина. 
+        | Мы предоставляем возможность приобрести лимитированное изделие, 
+        | созданное с учетом заданных вами параметров.
+  .main-slider
+    .swiper-wrapper
+      .swiper-slide(data-id="table1")
+        picture
+          source(srcset="./img/table1.webp", type="image/webp")
+          img(src="./img/table1.png", alt="table1", loading="lazy") 
+      .swiper-slide(data-id="table2")
+        picture
+          source(srcset="./img/table2.webp", type="image/webp")
+          img(src="./img/table2.png", alt="table", loading="lazy")
+    .swiper-pagination
+  .main-options 
+    .container
+      p.main-options__title Параметры, которые можно изменить по вашему желанию:
+      .main-options__block
+        .main-options__column 
+          p.main-options__column-title Cтолешница
+          ul.main-options__list 
+                
+  .main-footer 
+    .container
+      p 
+        span.gold Продемонстрируйте свой статус 
+        | и задайте ритм вашей работе
+      button.button 
+        |Подобрать изделие
