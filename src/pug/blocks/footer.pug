@@ -1,19 +1,11 @@
-footer.main-footer
+footer.footer
     .container
-        .logo
-            img(src="./img/logo.svg", alt="logo")
-        ul.menu
-            li.menu__item
-                a(href="#catalog") о бренде
-            li.menu__item
-                a(href="#catalog") Коллекция 2022
-            li.menu__item
-                a(href="#catalog") Blossom
-            li.menu__item
-                a(href="#catalog") Blossom
-            li.menu__item
-                a(href="#catalog") Blossom
-            li.menu__item
-                a(href="#catalog") Blossom
-            li.menu__item
-                a(href="#catalog") Blossom
+        .footer-top
+            .logo
+                img(src="./img/logo.svg", alt="logo")
+            p.footer-rights.md-visible Все права защищены, 2022
+            p.footer-policy.md-visible Политика конфиденциальности
+        .footer-menu
+            include ./menu
+        p.footer-rights.md-hidden Все права защищены, 2022
+        p.footer-policy.md-hidden Политика конфиденциальности

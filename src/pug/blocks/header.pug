@@ -1,15 +1,16 @@
 header.header
     .container
-        img(src="./img/logo.svg", alt="logo")
-        .menu
-            button.nav-tgl(type='button' aria-label='toggle menu')
-                // this span just for the three dividers in the hamburger button
-                span(aria-hidden='true')
-
-            nav.nav
-                // I don't care about the menu elements here so I will hide them
-                ul
-                    li element one
-                    li element two
-                    li element three
-                    li element four
+        .logo
+           img(src="./img/logo.svg", alt="logo")
+        .burger
+            input#menu-switch(type="checkbox")
+            #navigation
+            .navigation__content
+                .navigation__lang
+                    a.navigation__lang-link(href="") ru
+                    | |
+                    a.navigation__lang-link(href="") en
+                include ./menu
+                a.navigation__call.button(href="tel:+78881234567") Позвонить
+            label.menu-switch(for="menu-switch")
+                span

@@ -1,12 +1,35 @@
 .first-screen {
-  min-height: 100vh;
-  padding-top: 103px;
-  display: flex;
-  align-items: stretch;
-  margin-bottom: 120px;
+	min-height: calc(100vh - 113px);
+	display: flex;
+	align-items: stretch;
+	margin-bottom: 120px;
+	position: relative;
 
-  & .container {
-    flex-direction: column;
-    justify-content: space-between;
-  }
+	@media (min-width: $md) {
+		padding-top: 113px;
+	}
+
+	& .container {
+		flex-direction: column;
+		justify-content: space-between;
+		background: linear-gradient(180deg, #080808 0%, rgba(8, 8, 8, 0) 30%);
+	}
+
+	.title {
+		font-family: $font_title;
+	}
+
+	& .video {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+
+		& video {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 }
