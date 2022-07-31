@@ -1,6 +1,19 @@
 include ../mixins/sectionHeader
 
 .production
-    +sectionHeader("", "Production 54")
+    .production-pic.md-visible
+        picture
+            img(src="./img/production-bg.jpg", alt="room", loading="lazy", width="100%", height="100%")
     .container
-        | production
+        .production-header
+            +sectionHeader("", "Production 54")
+            p.production-description
+                span.gold Production 54 
+                | – большое мультифункциональное производство мебели класса luxe, 
+                | расположенное в центре Санкт-Петербурга. 
+                | Производственное подразделение головной компании Studia 54 было основано в 2019 году, 
+                | чтобы развивать собственный бренд уникальной дизайнерской мебели 
+                | и производить под ключ заказные изделия в рамках реализации наших проектов по всему миру. 
+    .production-slider 
+        .production-slider__item production-slider item
+        .production-slider__item slider item

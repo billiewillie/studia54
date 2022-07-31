@@ -1,22 +1,46 @@
 .first-screen {
-	min-height: calc(100vh - 113px);
+	min-height: calc(90vh - 113px);
 	display: flex;
 	align-items: stretch;
-	margin-bottom: 120px;
 	position: relative;
 
 	@media (min-width: $md) {
-		padding-top: 113px;
+		min-height: 100vh;
+		padding-top: 208px;
+		padding-bottom: 95px;
+		background-color: rgba(9, 9, 9, 0.5);
+	}
+
+	@media (min-width: $md) {
+		padding-top: 362px;
 	}
 
 	& .container {
 		flex-direction: column;
 		justify-content: space-between;
 		background: linear-gradient(180deg, #080808 0%, rgba(8, 8, 8, 0) 30%);
+
+		@media (min-width: $md) {
+			background: none;
+		}
 	}
 
 	.title {
 		font-family: $font_title;
+		display: flex;
+		flex-direction: column;
+		font-size: 24px;
+		line-height: 31.46px;
+
+		@media (min-width: $md) {
+			font-size: 40px;
+			line-height: 52.44px;
+		}
+
+		@media (min-width: $lg) {
+			font-size: 56px;
+			line-height: 73.42px;
+		}
 	}
 
 	& .video {
@@ -29,7 +53,13 @@
 
 		& video {
 			height: 100%;
+			width: 100%;
 			object-fit: cover;
 		}
+	}
+
+	& .button {
+		position: relative;
+		bottom: -17px;
 	}
 }

@@ -9,6 +9,18 @@
 		padding: 105px 0 157px;
 	}
 
+	& .section-header {
+		margin-bottom: 42px;
+
+		@media (min-width: $md) {
+			margin-bottom: 90px;
+		}
+
+		@media (min-width: $lg) {
+			margin-bottom: 103px;
+		}
+	}
+
 	&-content {
 		margin-bottom: 16px;
 
@@ -121,8 +133,6 @@
 	&-slider {
 		position: relative;
 		margin-bottom: 60px;
-		// display: flex;
-		// justify-content: center;
 
 		@media (min-width: $lg) {
 			margin-top: -194px;
@@ -300,5 +310,3 @@
 		}
 	}
 }
-
-

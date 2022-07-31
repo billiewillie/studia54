@@ -1,62 +1,18 @@
 import Swiper, { Navigation, Pagination } from "swiper";
 import { gsap, Power2 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-let videoSource = new Array();
-
-videoSource[0] = "../img/bed.mp4";
-videoSource[1] = "../img/table.mp4";
-videoSource[2] = "../img/banket.mp4";
-
-let i = 0;
-const videoCount = videoSource.length;
-const element = document.getElementById("video");
-
-function videoPlay(videoNum) {
-	element.setAttribute("src", videoSource[videoNum]);
-	element.autoplay = true;
-	element.load();
-}
-
-document.getElementById("video").addEventListener("ended", myHandler, false);
-
-videoPlay(0); // load the first video
-ensureVideoPlays(); // play the video automatically
-
-function myHandler() {
-	i++;
-	if (i == videoCount) {
-		i = 0;
-		videoPlay(i);
-	} else {
-		videoPlay(i);
-	}
-}
-
-function ensureVideoPlays() {
-	const video = document.getElementById("video");
-
-	if (!video) return;
-
-	const promise = video.play();
-	if (promise !== undefined) {
-		promise
-			.then(() => {
-				// Autoplay started
-			})
-			.catch((error) => {
-				// Autoplay was prevented.
-				video.muted = true;
-				video.play();
-			});
-	}
-}
+import topVideo from "./components/top-video";
+import open from "./components/burger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const revealContainers = document.querySelectorAll(".vip-pic");
 const textContainer = document.querySelector(".vip-text");
 const sliderContainer = document.querySelector(".vip-slider");
+const opener = document.querySelector("#menu-switch");
+
+topVideo();
+opener.addEventListener("click", open);
 
 function sliderReveal(sliderContainer) {
 	let tl = gsap.timeline({
@@ -195,33 +151,3 @@ function enableMobileSwiper() {
 
 breakpointDesktop.addEventListener("change", breakpointChecker);
 breakpointChecker();
-
-const opener = document.querySelector("#menu-switch");
-const menu = document.querySelector("#navigation");
-const navigationContent = document.querySelector(".navigation__content");
-
-opener.addEventListener("click", open);
-
-function open() {
-	if (opener.checked) {
-		menu.classList.add("is-open");
-		navigationContent.classList.add("is-open");
-	} else if (menu.classList.contains("is-open") && opener.checked === false) {
-		menu.classList.add("is-closing");
-		navigationContent.classList.add("is-closing");
-
-		let timerId = setTimeout(close, 500);
-
-		function close() {
-			menu.classList.remove("is-open");
-			menu.classList.remove("is-closing");
-
-			navigationContent.classList.remove("is-open");
-			navigationContent.classList.remove("is-closing");
-		}
-	}
-}
-
-// menu.addEventListener("animationend", function close() {
-// 	menu.removeEventListener("animationend", close);
-// });

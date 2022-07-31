@@ -1,0 +1,130 @@
+.button {
+	color: #000;
+	display: block;
+	width: 100%;
+	position: relative;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 23px 0;
+	text-align: center;
+	line-height: 15.11px;
+	letter-spacing: $ls5;
+	font-weight: var(--regular);
+	font-family: $font;
+	box-shadow: inset 0px 0px 0px #6a4d2f;
+	background: linear-gradient(93.58deg, #e0c0a0 0%, #b58555 95.83%), linear-gradient(93.58deg, #e0c0a0 0%, #eabe93 95.83%);
+
+	@media (min-width: $md) {
+		width: inherit;
+		padding: 21px 50px;
+		font-size: 16px;
+		line-height: 17.26px;
+	}
+
+	&::before {
+		position: absolute;
+		display: block;
+		content: "";
+		width: 80%;
+		height: 100%;
+		left: 0;
+		right: 0;
+		margin: auto;
+		background: rgba(224, 192, 160, 0.2);
+		transition: background 0.3s ease;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		-webkit-filter: blur(50px);
+		-moz-filter: blur(50px);
+		-ms-filter: blur(50px);
+		filter: blur(50px);
+	}
+
+	&:hover::before {
+		background: rgba(224, 192, 160, 0.4);
+		filter: blur(50px);
+	}
+
+	&:active {
+		box-shadow: inset 0px 0px 200px #6a4d2f;
+		transition: box-shadow 0.1s ease;
+	}
+
+	&:active::before {
+		background: rgba(224, 192, 160, 0.05);
+	}
+}
+
+.button-black {
+	color: var(--gold);
+	display: block;
+	align-self: center;
+	position: relative;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 21px 45px;
+	text-align: center;
+	line-height: 17.26px;
+	font-weight: var(--regular);
+	font-family: $font;
+	// box-shadow: inset 0px 0px 0px #6a4d2f;
+	background-color: rgba(8, 8, 8, 0.7);
+	background-image: radial-gradient(circle at 95.83% 95.83%, transparent 0px, #e0c0a0 0px, #e0c0a0 1px, transparent 1px),
+		linear-gradient(to right, #e0c0a0, #b58555), radial-gradient(circle at 0% 95.83%, transparent 0px, #b58555 0px, #b58555 1px, transparent 1px),
+		linear-gradient(to bottom, #b58555, #b58555), radial-gradient(circle at 0% 0%, transparent 0px, #b58555 0px, #b58555 1px, transparent 1px),
+		linear-gradient(to left, #b58555, #e0c0a0), radial-gradient(circle at 95.83% 0%, transparent 0px, #e0c0a0 0px, #e0c0a0 1px, transparent 1px),
+		linear-gradient(to top, #e0c0a0, #e0c0a0);
+	background-size: 1px 1px, calc(100% - 2px) 1px, 1px 1px, 1px calc(100% - 2px);
+	background-position: top left, top center, top right, center right, bottom right, bottom center, bottom left, center left;
+	background-repeat: no-repeat;
+
+	&::before {
+		position: absolute;
+		display: block;
+		content: "";
+		width: 80%;
+		height: 100%;
+		left: 0;
+		right: 0;
+		margin: auto;
+		background: rgba(224, 192, 160, 0.2);
+		transition: background 0.3s ease;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		-webkit-filter: blur(50px);
+		-moz-filter: blur(50px);
+		-ms-filter: blur(50px);
+		filter: blur(50px);
+	}
+
+	&:hover::before {
+		background: rgba(224, 192, 160, 0.4);
+		filter: blur(50px);
+	}
+
+	&:active {
+		background-color: rgba(8, 8, 8, 0.7);
+		background-image: radial-gradient(
+				circle at 95.83% 95.83%,
+				transparent 0px,
+				rgba(224, 192, 160, 0.7) 0px,
+				rgba(224, 192, 160, 0.7) 1px,
+				transparent 1px
+			),
+			linear-gradient(to right, rgba(224, 192, 160, 0.7), rgba(181, 133, 85, 0.7)),
+			radial-gradient(circle at 0% 95.83%, transparent 0px, rgba(181, 133, 85, 0.7) 0px, rgba(181, 133, 85, 0.7) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(181, 133, 85, 0.7), rgba(181, 133, 85, 0.7)),
+			radial-gradient(circle at 0% 0%, transparent 0px, rgba(181, 133, 85, 0.7) 0px, rgba(181, 133, 85, 0.7) 1px, transparent 1px),
+			linear-gradient(to left, rgba(181, 133, 85, 0.7), rgba(224, 192, 160, 0.7)),
+			radial-gradient(circle at 95.83% 0%, transparent 0px, rgba(224, 192, 160, 0.7) 0px, rgba(224, 192, 160, 0.7) 1px, transparent 1px),
+			linear-gradient(to top, rgba(224, 192, 160, 0.7), rgba(224, 192, 160, 0.7));
+	}
+
+	&:active::before {
+		background: rgba(224, 192, 160, 0.05);
+	}
+}

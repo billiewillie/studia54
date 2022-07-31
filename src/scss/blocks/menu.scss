@@ -3,6 +3,7 @@ ul.menu {
 		& a.menu__link {
 			letter-spacing: $ls5;
 			text-transform: uppercase;
+			color: var(--gold);
 		}
 	}
 }

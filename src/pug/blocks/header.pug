@@ -1,16 +1,46 @@
+include ../mixins/button
+
 header.header
+    .header-top.lg-visible
+        .container
+            .lang
+                a.navigation__lang-link(href="") ru
+                | |
+                a.navigation__lang-link(href="") en
     .container
+        .header-left.md-visible
+            ul.menu 
+                li.menu__item.lg-visible
+                    a.menu__link(href="") о бренде
+                li.menu__item 
+                    a.menu__link(href="") Коллекция 2022
+                li.menu__item.lg-visible
+                    a.menu__link(href="") Blossom
         .logo
            img(src="./img/logo.svg", alt="logo")
-        .burger
-            input#menu-switch(type="checkbox")
-            #navigation
-            .navigation__content
-                .navigation__lang
-                    a.navigation__lang-link(href="") ru
-                    | |
-                    a.navigation__lang-link(href="") en
-                include ./menu
-                a.navigation__call.button(href="tel:+78881234567") Позвонить
-            label.menu-switch(for="menu-switch")
-                span
+        .header-right
+            ul.menu.lg-visible
+                li.menu__item
+                    a.menu__link(href="") Каталог
+                li.menu__item 
+                    a.menu__link(href="") Команда
+                li.menu__item
+                    a.menu__link(href="") VIP
+                li.menu__item
+                    a.menu__link(href="") Контакты
+            .lang.md-visible.lg-hidden
+                a.navigation__lang-link(href="") ru
+                | |
+                a.navigation__lang-link(href="") en
+            .burger.lg-hidden
+                input#menu-switch(type="checkbox")
+                #navigation.md-hidden
+                .navigation__content
+                    .lang
+                        a.navigation__lang-link(href="") ru
+                        | |
+                        a.navigation__lang-link(href="") en
+                    include ./menu
+                    +button({classes: "button navigation__call", href:"tel:+78881234567"}) Позвонить
+                label.menu-switch(for="menu-switch")
+                    span

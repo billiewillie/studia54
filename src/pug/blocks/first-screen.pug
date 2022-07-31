@@ -1,7 +1,9 @@
+include ../mixins/button
+
 .first-screen
     .video
         video#video
     .container
-        h1.title Мебель, которая вдохновляет
-            span на новый образ жизни
-        a(href="#catalog") Перейти к каталогу
+        h1.title Мебель, которая вдохновляет на новый  образ жизни
+        +button({href:"#catalog", classes: "button-black md-visible"}) Перейти к каталогу
+        +button({href:"#catalog", classes: "button md-hidden"}) Перейти к каталогу

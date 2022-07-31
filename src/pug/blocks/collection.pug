@@ -1,6 +1,14 @@
+include ../mixins/button
 include ../mixins/sectionHeader
 
 .collection
-    +sectionHeader("a life is a bed of roses", "Collection 2022")
     .container
-        | Яркое вдохновение для вневременного интерьера
+        +sectionHeader("a bed of roses", "Collection 2022")
+        .collection-content
+            p.gold Яркое вдохновение для вневременного интерьера
+            p 
+                | Название коллекции - a bed of roses – прекрасная метафора, 
+                | символизирующая радость жизни и совокупность историй.  
+                | В основу дизайна легли лаконичность, целостность и строгость линий, 
+                | а также нетривиальные цветовые сочетания.
+            +button({href:"https://studia-54.store/softfurniture", classes: "button", target: "_blank"}) Подобрать изделие

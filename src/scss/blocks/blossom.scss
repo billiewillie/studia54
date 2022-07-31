@@ -1,0 +1,40 @@
+.blossom {
+	padding: 120px 0;
+
+	@media (min-width: $md) {
+		padding: 150px 0 218px;
+	}
+
+	@media (min-width: $lg) {
+		padding: 275px 0 250px;
+	}
+
+	& .container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-row {
+		display: flex;
+		flex-direction: column;
+		@media (min-width: $md) {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+
+	&-row:nth-of-type(3) .blossom-pic {
+		transform: rotate(-3.66deg);
+	}
+
+	&-text,
+	&-pic {
+		width: 50%;
+	}
+
+	&-text p {
+		font-size: 14px;
+		line-height: 18.9px;
+		margin-bottom: 20px;
+	}
+}

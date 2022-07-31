@@ -1,9 +1,23 @@
 include ../mixins/sectionHeader
+include ../mixins/button
 
 .contacts
-    +sectionHeader("Контакты", "Our location")
     .container
+        +sectionHeader("Контакты", "Our location")
         .locations
-            | locations
-        .form
-            | forms
+            .locations__item
+                h3.locations__city.gold Russia, Saint - Petersburg
+                p.locations__address 
+                    span.gold Address: 
+                    | Novgorodskaya, 23 A, office 340 (reservation required) 
+            .locations__item
+                h3.locations__city.gold Dubai, DMCC, UAE
+                p.locations__address 
+                    span.gold Address: 
+                    | Platinum Tower, Jumeirah Lake Towers, unit number 808-04
+        p Оставьте заявку, чтобы заказать мебель
+        .contacts-form
+            +button({classes: "button", type: "submit"}) Отправить
+        p 
+            | Нажимая на кнопку, вы соглашаетесь 
+            span.gold на обработку персональных данных
