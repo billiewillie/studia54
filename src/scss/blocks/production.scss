@@ -17,14 +17,16 @@
 	}
 
 	&-pic {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: -1;
-		min-height: 900px;
+		display: none;
 
-		@media (min-width: $lg) {
+		@media (min-width: $md) {
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: -1;
+			min-height: 900px;
 			min-height: 1071px;
 		}
 

@@ -6,6 +6,9 @@ include ../mixins/sectionHeader
         .blossom-row
             .blossom-pic
                 picture
+                    source(media="(min-width: 768px)", srcset="./img/blossom-lg.webp", type="image/webp")
+                    source(media="(min-width: 768px)", srcset="./img/blossom-lg.png")
+                    source(srcset="./img/blossom.webp", type="image/webp")
                     img(src="./img/blossom.png", alt="blossom", loading="lazy", width="100%", height="100%")
             .blossom-text
                 p
@@ -17,9 +20,11 @@ include ../mixins/sectionHeader
                     | Сочетание гладкой натуральной кожи и мягкой замши итальянского производства,
                     | черного стекла, напоминающего обсидиан,
                     | и мягких пропорций – мы предлагаем новое понимание атмосферы современной роскоши.
-                a.gold(href="http://") Перейти в STORE
+                p.right
+                    a.gold(href="http://") Перейти в STORE
         .blossom-row.md-visible
             .blossom-text
+                p.faded.md-visible fiftyfourms reasonsto fall in love
                 p
                     | Дебютная коллекция от Studia 54 была разработана совместными усилиями дизайнеров бренда и специалистами Production 54. 
                     | Концепция состояла в синтезе функциональности, фантазиии и поиске новых решений. 
@@ -27,4 +32,4 @@ include ../mixins/sectionHeader
             .blossom-pic
                 picture
                     img(src="./img/blossom-history.jpg", alt="blossom", loading="lazy", width="100%", height="100%")
-        p.text-faded.md-visible fiftyfourms reasonsto fall in love 
+        

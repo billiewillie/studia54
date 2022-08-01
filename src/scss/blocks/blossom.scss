@@ -1,5 +1,5 @@
 .blossom {
-	padding: 120px 0;
+	padding: 120px 0 0;
 
 	@media (min-width: $md) {
 		padding: 150px 0 218px;
@@ -23,18 +23,149 @@
 		}
 	}
 
-	&-row:nth-of-type(3) .blossom-pic {
-		transform: rotate(-3.66deg);
+	&-row:nth-of-type(2) {
+		& .blossom-text {
+			& p:nth-child(2) {
+				@media (min-width: $lg) {
+					margin-bottom: 100px;
+				}
+			}
+		}
+	}
+
+	&-row:nth-of-type(3) {
+		@media (min-width: $lg) {
+			margin-top: -150px;
+		}
+
+		& .blossom-pic {
+			position: relative;
+			transform: rotate(-3.66deg);
+
+			& img {
+				width: 120%;
+				left: 5%;
+
+				@media (min-width: $lg) {
+					width: 80%;
+					left: 15%;
+				}
+			}
+
+			&::after {
+				position: absolute;
+				display: block;
+				content: "";
+				width: 70%;
+				height: 70%;
+				bottom: -14px;
+				right: -20%;
+				margin: auto;
+				border-radius: 50%;
+				z-index: -1;
+				background-color: #fff;
+				opacity: 0.7;
+				-webkit-backface-visibility: hidden;
+				-moz-backface-visibility: hidden;
+				-webkit-transform: translate3d(0, 0, 0);
+				-moz-transform: translate3d(0, 0, 0);
+				-webkit-filter: blur(70px);
+				-moz-filter: blur(70px);
+				-ms-filter: blur(70px);
+				filter: blur(70px);
+
+				@media (min-width: $lg) {
+					width: 40%;
+					height: 40%;
+					right: 45%;
+					bottom: inherit;
+					top: 10%;
+				}
+			}
+		}
+
+		& .blossom-text p:last-child {
+			@media (min-width: $lg) {
+				padding-left: 104px;
+			}
+		}
 	}
 
 	&-text,
 	&-pic {
-		width: 50%;
+		@media (min-width: $md) {
+			width: 50%;
+		}
 	}
 
-	&-text p {
-		font-size: 14px;
-		line-height: 18.9px;
-		margin-bottom: 20px;
+	&-text {
+		position: relative;
+		margin-top: -60px;
+
+		@media (min-width: $md) {
+			margin-top: 0px;
+		}
+
+		p {
+			font-size: 14px;
+			line-height: 18.9px;
+			margin-bottom: 20px;
+			font-weight: 300;
+
+			@media (min-width: $md) {
+				font-size: 16px;
+				line-height: 21.6px;
+				letter-spacing: $ls2;
+			}
+
+			@media (min-width: $md) {
+				font-size: 18px;
+				line-height: 24.3px;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&.faded {
+				font-size: 32px;
+				line-height: 36.8px;
+				position: absolute;
+				top: -103px;
+				width: 130%;
+				left: 0;
+				margin-bottom: 0;
+
+				@media (min-width: $lg) {
+					top: inherit;
+					bottom: -184px;
+					font-size: 40px;
+					line-height: 36.2px;
+					width: 140%;
+				}
+			}
+
+			& a {
+				text-decoration: underline;
+				text-underline-offset: 2px;
+
+				@media (min-width: $md) {
+					text-underline-offset: 3px;
+				}
+			}
+		}
+	}
+
+	&-pic {
+		& img {
+			position: relative;
+			max-width: inherit;
+			width: 180%;
+			left: -40%;
+
+			@media (min-width: $md) {
+				left: -50%;
+			}
+		}
 	}
 }

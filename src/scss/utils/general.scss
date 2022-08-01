@@ -62,6 +62,15 @@ a {
 	color: var(--gold);
 }
 
+.faded {
+	color: rgba(69, 69, 69, 0.2);
+	text-transform: uppercase;
+}
+
+.right {
+	text-align: right;
+}
+
 .md-visible {
 	display: none !important;
 

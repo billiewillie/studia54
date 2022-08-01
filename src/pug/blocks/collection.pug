@@ -3,12 +3,39 @@ include ../mixins/sectionHeader
 
 .collection
     .container
-        +sectionHeader("a bed of roses", "Collection 2022")
-        .collection-content
-            p.gold Яркое вдохновение для вневременного интерьера
-            p 
-                | Название коллекции - a bed of roses – прекрасная метафора, 
-                | символизирующая радость жизни и совокупность историй.  
+        p.faded.md-visible.rotated a life is
+        .section-header
+            h2.title.gold 
+                | a 
+                span.md-hidden 
+                    | life is 
+                    br
+                    | a 
+                | bed of roses
+            h4.special Collection 2022
+    .collection-pic
+        picture
+            source(media="(min-width: 768px)", srcset="./img/collection-bed-lg.webp", type="image/webp")
+            source(media="(min-width: 768px)", srcset="./img/collection-bed-lg.jpg")
+            source(srcset="./img/collection-bed.webp", type="image/webp")
+            img(src="./img/collection-bed.jpg", alt="bed", loading="lazy", width="100%", height="100%")
+    .collection-content
+        .container
+            h3.gold.title Яркое вдохновение для&#160;вневременного интерьера
+            p.text
+                | Название коллекции - 
+                b a bed of roses 
+                | – прекрасная метафора, символизирующая радость жизни и совокупность историй.  
                 | В основу дизайна легли лаконичность, целостность и строгость линий, 
                 | а также нетривиальные цветовые сочетания.
-            +button({href:"https://studia-54.store/softfurniture", classes: "button", target: "_blank"}) Подобрать изделие
+                span.lg-visible
+                    | Таким образом, границы между дизайном и современным искусством постепенно стираются.
+    .collection-footer
+        .container
+            .collection-footer__pic.md-visible
+                picture
+                    source(srcset="./img/collection-table.webp", type="image/webp")
+                    img(src="./img/collection-table.jpg", alt="bed", loading="lazy", width="100%", height="100%")
+            .collection-footer__content
+                +button({href:"https://studia-54.store/softfurniture", classes: "button", target: "_blank"}) Подобрать изделие
+                p.faded.md-visible The atmosphere of modern luxury
