@@ -3,4 +3,20 @@
 	& .container {
 		flex-direction: column;
 	}
+
+	& .swiper-slide {
+		width: 88vw;
+	}
+
+	& .section-header {
+		margin-bottom: 31px;
+
+		@media (min-width: $md) {
+			margin-bottom: 90px;
+		}
+
+		@media (min-width: $lg) {
+			margin-bottom: 155px;
+		}
+	}
 }

@@ -50,6 +50,11 @@ module.exports = {
 		publicPath: "",
 		clean: true,
 	},
+	performance: {
+		hints: false,
+		maxEntrypointSize: 512000,
+		maxAssetSize: 512000,
+	},
 	devServer: {
 		historyApiFallback: true,
 		static: path.resolve(`${PATHS.dist}`),
@@ -111,15 +116,11 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(?:|woff2|woff)$/,
-				use: [
-					{
-						loader: "file-loader",
-						options: {
-							name: `./fonts/${filename("[ext]")}`,
-						},
-					},
-				],
+				test: /\.(woff2|woff)$/,
+				type: "asset/resource",
+				generator: {
+					filename: "fonts/[name][ext]",
+				},
 			},
 		],
 	},

@@ -3,4 +3,14 @@ include ../mixins/sectionHeader
 .catalog#catalog
     .container
         +sectionHeader("Store 54", "Catalogue")
-        p catalog
+    .catalog-slider
+        .swiper-wrapper
+            a.swiper-slide(href="http://")
+                picture
+                    img(src="./img/catalog-1.jpg", alt="catalog1", loading="lazy")
+            a.swiper-slide(href="http://")
+                picture
+                    img(src="./img/catalog-2.jpg", alt="catalog2", loading="lazy")
+            a.swiper-slide(href="http://")
+                picture
+                    img(src="./img/catalog-3.jpg", alt="catalog3", loading="lazy")
