@@ -52,6 +52,18 @@ function enableMobileSwiper() {
 new Swiper(".catalog-slider", {
 	slidesPerView: "auto",
 	spaceBetween: 16,
+
+	breakpoints: {
+		768: {
+			spaceBetween: 32,
+		},
+		1360: {
+			spaceBetween: 40,
+		},
+		1920: {
+			spaceBetween: 33,
+		},
+	},
 });
 
 breakpointDesktop.addEventListener("change", breakpointChecker);

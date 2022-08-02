@@ -1,11 +1,45 @@
 .catalog {
 	padding-top: 120px;
-	& .container {
-		flex-direction: column;
+
+	&-slider {
+		max-width: 1360px;
+		margin: auto;
+		@media (min-width: $md) {
+			padding: 0 46px;
+		}
+
+		@media (min-width: $md) {
+			padding: 0 72px;
+		}
 	}
 
 	& .swiper-slide {
 		width: 88vw;
+		height: 100vw;
+		display: block;
+		border: 1px solid #000;
+		overflow: hidden;
+
+		@media (min-width: $md) {
+			width: 64.6vw;
+			height: 56.8vw;
+		}
+
+		@media (min-width: $lg) {
+			width: 37.7vw;
+			height: 33vw;
+		}
+
+		@media (min-width: $xl) {
+			width: 592px;
+			height: 520px;
+		}
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
 	& .section-header {
