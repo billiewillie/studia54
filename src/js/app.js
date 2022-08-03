@@ -90,6 +90,27 @@ new Swiper(".catalog-slider", {
 	},
 });
 
+new Swiper(".production-slider", {
+	modules: [Navigation],
+	slidesPerView: "auto",
+	spaceBetween: 24,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+
+	breakpoints: {
+		768: {
+			spaceBetween: 56,
+		},
+
+		1360: {
+			spaceBetween: 0,
+			slidesPerView: 1,
+		},
+	},
+});
+
 breakpointTablet.addEventListener("change", breakpointTabletChecker);
 breakpointDesktop.addEventListener("change", breakpointDesktopChecker);
 

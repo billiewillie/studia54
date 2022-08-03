@@ -26,7 +26,7 @@
 			left: 0;
 			width: 100%;
 			z-index: -1;
-			min-height: 900px;
+			height: 67%;
 			min-height: 1071px;
 		}
 
@@ -38,11 +38,129 @@
 	}
 
 	&-slider {
-		height: 300px;
-		border: 1px solid #ccc;
+		margin: auto;
+		position: relative;
+		max-width: 1360px;
+		@media (min-width: $md) {
+			padding-left: 48px;
+		}
+
+		@media (min-width: $lg) {
+			padding-left: 72px;
+			padding-right: 72px;
+		}
+	}
+
+	& .swiper-slide {
+		width: 85vw;
 
 		@media (min-width: $md) {
-			height: 600px;
+			width: 80vw;
+		}
+
+		@media (min-width: $lg) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			column-gap: 94px;
+			width: inherit;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		&-active {
+			@media (min-width: $lg) {
+				opacity: 1;
+			}
+		}
+
+		& .pic {
+			height: 64vw;
+			margin-bottom: 24px;
+
+			@media (min-width: $lg) {
+				margin-bottom: 42px;
+			}
+
+			@media (min-width: $lg) {
+				width: 592px;
+				height: 447px;
+				margin-bottom: 0;
+			}
+
+			& img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		& .text {
+			text-align: left;
+			padding-left: 24px;
+
+			@media (min-width: $md) {
+				padding-left: 0px;
+				width: 346px;
+			}
+
+			& .title {
+				font-size: 16px;
+				line-height: 21.6px;
+				letter-spacing: $ls5;
+				margin-bottom: 8px;
+
+				@media (min-width: $md) {
+					font-size: 22px;
+					line-height: 29.7px;
+				}
+			}
+
+			& p {
+				letter-spacing: $ls2;
+				font-size: 14px;
+				line-height: 18.9px;
+				font-weight: 300;
+
+				@media (min-width: $md) {
+					font-size: 16px;
+					line-height: 21.6px;
+				}
+
+				@media (min-width: $lg) {
+					font-size: 18px;
+					line-height: 24.3px;
+				}
+			}
+		}
+	}
+
+	& .swiper-button-next {
+		right: 104px;
+		top: inherit;
+		bottom: 0;
+
+		@media (min-width: $lg) {
+			right: 72px;
+			top: 50%;
+			bottom: inherit;
+		}
+	}
+
+	& .swiper-button-prev {
+		left: 72px;
+		transform: rotate(180deg);
+	}
+
+	& .swiper-button-prev,
+	& .swiper-button-next {
+		width: 29px;
+		height: 92px;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&::after {
+			display: none;
 		}
 	}
 

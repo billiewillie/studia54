@@ -1,4 +1,13 @@
 .logo-video {
-	width: 100%;
-	object-fit: cover;
+	justify-content: center;
+
+	@media (min-width: $lg) {
+		padding: 0 72px;
+	}
+
+	& video {
+		width: 100%;
+		max-width: 1360px;
+		object-fit: cover;
+	}
 }

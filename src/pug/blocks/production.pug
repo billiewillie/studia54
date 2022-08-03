@@ -3,7 +3,7 @@ include ../mixins/sectionHeader
 .production
     .production-pic
         picture
-            img(src="./img/production-bg.jpg", alt="room", loading="lazy", width="100%", height="100%")
+            img(src="./img/production-bg.jpg", alt="production", loading="lazy", width="100%", height="100%")
     .container
         .production-header
             +sectionHeader("", "Production 54")
@@ -15,5 +15,27 @@ include ../mixins/sectionHeader
                 | чтобы развивать собственный бренд уникальной дизайнерской мебели 
                 | и производить под ключ заказные изделия в рамках реализации наших проектов по всему миру. 
     .production-slider 
-        .production-slider__item production-slider item
-        .production-slider__item slider item
+        .swiper-wrapper
+            .swiper-slide
+                .pic
+                    picture
+                        img(src="./img/production-1.jpg", alt="production1", loading="lazy")
+                .text 
+                    h4.title.gold Обработка массива дерева
+                    p Материал для каждой заготовки проходит строгий отбор специалиста
+            .swiper-slide
+                .pic
+                    picture
+                        img(src="./img/production-2.jpg", alt="production2", loading="lazy")
+                .text 
+                    h4.title.gold Обработка массива дерева
+                    p Материал для каждой заготовки проходит строгий отбор специалиста
+            .swiper-slide
+                .pic
+                    picture
+                        img(src="./img/production-3.jpg", alt="production3", loading="lazy")
+                .text 
+                    h4.title.gold Обработка массива дерева
+                    p Материал для каждой заготовки проходит строгий отбор специалиста
+        .swiper-button-next.md-visible(style="background-image: url('../../img/slider-arrow.svg');")
+        .swiper-button-prev.lg-visible(style="background-image: url('../../img/slider-arrow.svg');")
