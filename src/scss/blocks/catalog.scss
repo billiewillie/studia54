@@ -4,6 +4,7 @@
 	&-slider {
 		max-width: 1360px;
 		margin: auto;
+
 		@media (min-width: $md) {
 			padding: 0 46px;
 		}
@@ -17,7 +18,6 @@
 		width: 88vw;
 		height: 100vw;
 		display: block;
-		border: 1px solid #000;
 		overflow: hidden;
 
 		@media (min-width: $md) {

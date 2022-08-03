@@ -1,5 +1,22 @@
 .emotions
-    .container
-        p emotions that last forever
-    .emotions-block 
-        p Комбинации материалов, о которых вы раньше не задумывались
+    .container.lg-visible
+        p.faded emotions that last forever
+    .emotions-slider
+        .swiper-wrapper
+            .swiper-slide
+                p.text Комбинации материалов, о которых вы раньше не задумывались
+                .pic
+                    picture
+                        img(src="./img/emotions-1.jpg", alt="emotions1", loading="lazy")
+            .swiper-slide
+                p.text Мебельный дизайн как искусство
+                .pic
+                    picture
+                        img(src="./img/emotions-2.jpg", alt="emotions2", loading="lazy")
+            .swiper-slide
+                p.text Неотъемлемая часть ультрасовременных интерьеров по всему миру
+                .pic
+                    picture
+                        img(src="./img/emotions-3.jpg", alt="emotions3", loading="lazy")
+    .container.lg-visible
+        p.faded The atmosphere of modern luxury
