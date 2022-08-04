@@ -194,6 +194,13 @@
 			margin: inherit;
 			left: 48px;
 		}
+
+		@media (min-width: $lg) {
+			bottom: -176px;
+			width: 500px;
+			right: inherit;
+			margin: 0 0 0 100px;
+		}
 	}
 
 	& .swiper-pagination-bullet {
