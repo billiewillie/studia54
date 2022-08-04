@@ -1,5 +1,5 @@
 import Swiper, { Navigation, Pagination } from "swiper";
-import { gsap, Power2 } from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import topVideo from "./components/top-video";
 import open from "./components/burger";
@@ -76,6 +76,8 @@ function enableEmotionsSwiper() {
 new Swiper(".catalog-slider", {
 	slidesPerView: "auto",
 	spaceBetween: 16,
+	centeredSlidesBounds: true,
+	centeredSlides: true,
 
 	breakpoints: {
 		768: {
@@ -93,6 +95,8 @@ new Swiper(".catalog-slider", {
 new Swiper(".production-slider", {
 	modules: [Navigation],
 	slidesPerView: "auto",
+	centeredSlides: true,
+	centeredSlidesBounds: true,
 	spaceBetween: 24,
 	navigation: {
 		nextEl: ".swiper-button-next",
@@ -103,10 +107,57 @@ new Swiper(".production-slider", {
 		768: {
 			spaceBetween: 56,
 		},
-
 		1360: {
 			spaceBetween: 0,
 			slidesPerView: 1,
+		},
+	},
+});
+
+const aboutData = ["2018-2019", "2019-2020", "2020-2021", "2020-2021", "май 2022"];
+
+new Swiper(".about-slider", {
+	modules: [Navigation, Pagination],
+	loop: true,
+	slidesPerView: "auto",
+	spaceBetween: 16,
+	centeredSlides: true,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+		renderBullet: function (index, className) {
+			const text = aboutData[index];
+			return `
+				<div class="${className}">
+					<span class="pagination-text">${text}</span>
+					<span class="pagination-border"></span>
+				</div>`;
+		},
+	},
+	on: {
+		init: function () {
+			console.log("swiper initialized");
+		},
+	},
+
+	breakpoints: {
+		768: {
+			centeredSlides: false,
+			loop: false,
+			spaceBetween: 56,
+		},
+		1360: {
+			slidesPerView: 1,
+			loop: false,
+			spaceBetween: 0,
+			centeredSlides: false,
+			noSwiping: true,
+			noSwipingClass: ".swiper-slide",
+			speed: 1,
 		},
 	},
 });
