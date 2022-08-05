@@ -1,11 +1,14 @@
 import Swiper, { Navigation, Pagination } from "swiper";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import simpleParallax from "simple-parallax-js";
+
 import topVideo from "./components/top-video";
 import open from "./components/burger";
 import sliderReveal from "./components/sliderReveal";
 import textReveal from "./components/textReveal";
 import revealImage from "./components/revealImage";
+import logoAnimation from "../img/logo-animation.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +16,35 @@ const revealContainers = document.querySelectorAll(".vip-pic");
 const textContainer = document.querySelector(".vip-text");
 const sliderContainer = document.querySelector(".vip-slider");
 const opener = document.querySelector("#menu-switch");
+const logoVideo = document.querySelector(".logo-video video");
+const productionPicBg = document.querySelector(".production-pic__bg");
+
+new simpleParallax(productionPicBg, {
+	orientation: "right",
+	scale: 1.08,
+});
+
+logoVideo.setAttribute("src", logoAnimation);
+
+let isPaused = false;
+let observer = new IntersectionObserver(
+	(entries, observer) => {
+		entries.forEach((entry) => {
+			if (entry.intersectionRatio != 1) {
+				logoVideo.pause();
+				isPaused = true;
+			} else if (isPaused) {
+				logoVideo.play();
+				isPaused = false;
+			}
+		});
+	},
+	{
+		threshold: 1,
+	}
+);
+
+observer.observe(logoVideo);
 
 topVideo();
 opener.addEventListener("click", open);

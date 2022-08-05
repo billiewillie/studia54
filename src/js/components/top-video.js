@@ -1,9 +1,13 @@
+import bed from "../../img/bed.mp4";
+import table from "../../img/table.mp4";
+import banket from "../../img/banket.mp4";
+
 const topVideo = function () {
 	let videoSource = new Array();
 
-	videoSource[0] = "../img/bed.mp4";
-	videoSource[1] = "../img/table.mp4";
-	videoSource[2] = "../img/banket.mp4";
+	videoSource[0] = bed;
+	videoSource[1] = table;
+	videoSource[2] = banket;
 
 	let i = 0;
 	const videoCount = videoSource.length;

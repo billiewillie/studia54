@@ -105,7 +105,7 @@ module.exports = {
 				use: ["babel-loader"],
 			},
 			{
-				test: /\.(?:|gif|png|jpg|jpeg|svg|webp)$/,
+				test: /\.(?:|gif|png|jpg|jpeg|svg|webp|mp4)$/,
 				use: [
 					{
 						loader: "file-loader",

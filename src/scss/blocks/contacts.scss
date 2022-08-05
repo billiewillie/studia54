@@ -36,6 +36,10 @@
 
 		&__item {
 			margin-bottom: 32px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 
 		&__city {
@@ -60,6 +64,11 @@
 			letter-spacing: $ls5;
 			font-size: 14px;
 			line-height: 18.9px;
+			font-weight: 300;
+
+			& span.gold {
+				font-weight: 400;
+			}
 
 			@media (min-width: $md) {
 				font-size: 18px;
@@ -69,6 +78,64 @@
 			@media (min-width: $lg) {
 				font-size: 22px;
 				line-height: 29.7px;
+			}
+		}
+	}
+
+	&-tease {
+		margin-bottom: 24px;
+		font-size: 18px;
+		line-height: 19.42px;
+		font-weight: 300;
+	}
+
+	&-form {
+		margin-bottom: 24px;
+		line-height: 19.42px;
+		font-weight: 300;
+	}
+
+	& .form {
+		&-row {
+			position: relative;
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-top: 20px;
+			}
+
+			& .input {
+				border: 1px solid rgba(224, 192, 160, 0.5);
+				background: none;
+				width: 100%;
+				padding: 21px 16px;
+				font-size: 16px;
+				font-weight: 300;
+				color: #fff;
+				transition: border 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			& .input-label {
+				position: absolute;
+				left: 15px;
+				color: #fff;
+				pointer-events: none;
+				top: 32px;
+				line-height: 1px;
+				transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			& .input:focus,
+			& .input:valid {
+				outline: none;
+				border: 1px solid #e0c0a0;
+				background: var(--black);
+			}
+
+			& .input:focus ~ label,
+			& input:valid ~ label {
+				transform: translateY(-50%) scale(0.8);
+				color: rgba(255, 255, 255, 0.5);
 			}
 		}
 	}

@@ -43,7 +43,6 @@
 
 	&-menu {
 		margin-bottom: 32px;
-		columns: 2;
 
 		@media (min-width: $md) {
 			columns: inherit;
@@ -65,6 +64,7 @@
 
 		& .menu__item {
 			margin-bottom: 16px;
+			width: 50%;
 
 			@media (min-width: $md) {
 				width: 50%;
@@ -76,6 +76,11 @@
 
 			&:last-child {
 				margin-bottom: 0;
+
+				& a.menu__link {
+					color: #fff;
+				}
+
 				@media (min-width: $md) {
 					margin-left: auto;
 				}
@@ -85,7 +90,7 @@
 				}
 			}
 
-			& .item__link {
+			& .menu__link {
 				font-size: 13px;
 
 				@media (min-width: $md) {
@@ -96,6 +101,6 @@
 	}
 
 	&-rights {
-		margin-bottom: 8px;
+		margin-bottom: 21px;
 	}
 }

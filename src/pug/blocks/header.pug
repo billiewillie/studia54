@@ -36,11 +36,27 @@ header.header
                 input#menu-switch(type="checkbox")
                 #navigation.md-hidden
                 .navigation__content
-                    .lang
-                        a.navigation__lang-link(href="") ru
+                    .lang.md-hidden
+                        a.navigation__lang-link.gold(href="") ru
                         | |
                         a.navigation__lang-link(href="") en
-                    include ./menu
-                    +button({classes: "button navigation__call", href:"tel:+78881234567"}) Позвонить
+                    ul.menu 
+                        li.menu__item
+                            a.menu__link(href="") о бренде
+                        li.menu__item.md-hidden
+                            a.menu__link(href="") Коллекция 2022
+                        li.menu__item
+                            a.menu__link(href="") Blossom
+                        li.menu__item
+                            a.menu__link(href="") Каталог
+                        li.menu__item 
+                            a.menu__link(href="") Команда
+                        li.menu__item
+                            a.menu__link(href="") VIP
+                        li.menu__item
+                            a.menu__link(href="") Контакты
+                        li.menu__item.md-hidden
+                            a.menu__link.gold(href="") STORE 54
+                    +button({classes: "button navigation__call md-hidden", href:"tel:+78881234567"}) Позвонить
                 label.menu-switch(for="menu-switch")
                     span
