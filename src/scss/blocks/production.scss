@@ -169,6 +169,7 @@
 		font-size: 14px;
 		line-height: 18.9px;
 		letter-spacing: $ls2;
+		font-weight: 300;
 
 		@media (min-width: $md) {
 			margin-bottom: 453px;
@@ -201,5 +202,9 @@
 			order: 2;
 			flex-grow: 2;
 		}
+	}
+
+	.simpleParallax {
+		height: 100%;
 	}
 }

@@ -19,17 +19,16 @@ include ../mixins/sectionHeader
         | но и является отражением характера своего хозяина. 
         | Мы предоставляем возможность приобрести лимитированное изделие, 
         | созданное с учетом заданных вами параметров.
-  .vip-slider
-    .swiper-wrapper
-      .swiper-slide(data-id="table1")
-        picture
-          source(srcset="./img/table1.webp", type="image/webp")
-          img(src="./img/table1.png", alt="table1", loading="lazy") 
-      .swiper-slide(data-id="table2")
-        picture
-          source(srcset="./img/table2.webp", type="image/webp")
-          img(src="./img/table2.png", alt="table", loading="lazy")
-    .swiper-pagination
+  .vip-builder
+    .container 
+      .builder-pics
+        .builder-pics__item.woodstock
+          img(src="../../img/woodstock_eben.png")
+        .builder-pics__item.aida
+          img(src="../../img/aida_black.png")
+        .builder-pics__item.inside
+          img(src="../../img/aida_sand_inside.png")
+
   .vip-options
     .container
       p.vip-options__title Параметры, которые можно изменить по вашему желанию:
@@ -37,17 +36,86 @@ include ../mixins/sectionHeader
         .vip-options__column
           p.vip-options__column-title Cтолешница
           ul.vip-options__list
-            li.option
+            li.option(data-image='woodstock_eben', data-category="woodstock")
               .option-pic(style="background-color: #7B4634")
               .option-about
                 p.option-about__title Эбен 5
                 p.option-about__description Натуральный шпон
-            li.option
-              .option-pic(style="background-color: #333")
+            li.option(data-image='woodstock_eben-2', data-category="woodstock")
+              .option-pic(style="background-color: #7B4634")
               .option-about
-                p.option-about__title KOTO
+                p.option-about__title Эбен 5
                 p.option-about__description Натуральный шпон
-                
+            li.option(data-image='woodstock_evkalipt', data-category="woodstock")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Эбен 5
+                p.option-about__description Натуральный шпон
+            li.option(data-image='woodstock_koto', data-category="woodstock")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Эбен 5
+                p.option-about__description Натуральный шпон
+            li.option(data-image='woodstock_orex', data-category="woodstock")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Эбен 5
+                p.option-about__description Натуральный шпон
+        .vip-options__column
+          p.vip-options__column-title Корпус
+          ul.vip-options__list
+            li.option(data-image='aida_black', data-category="aida")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Black ink
+                p.option-about__description Натуральная кожа
+            li.option(data-image='aida_blackberry', data-category="aida")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Black ink
+                p.option-about__description Натуральная кожа
+            li.option(data-image='aida_grey', data-category="aida")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Black ink
+                p.option-about__description Натуральная кожа
+            li.option(data-image='aida_spruce', data-category="aida")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Black ink
+                p.option-about__description Натуральная кожа
+        .vip-options__column
+          p.vip-options__column-title Подстолье
+          ul.vip-options__list
+            li.option(data-image='aida_saddle_inside', data-category="inside")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Saddle
+                p.option-about__description Натуральная кожа
+            li.option(data-image='aida_grey_inside', data-category="inside")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Saddle
+                p.option-about__description Натуральная кожа
+            li.option(data-image='aida_ash_inside', data-category="inside")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Saddle
+                p.option-about__description Натуральная кожа
+            li.option(data-image='aida_sand_inside', data-category="inside")
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Saddle
+                p.option-about__description Натуральная кожа
+            
+        .vip-options__column
+          p.vip-options__column-title Фурнитура
+          ul.vip-options__list
+            li.option
+              .option-pic(style="background-color: #7B4634")
+              .option-about
+                p.option-about__title Флористика
+                p.option-about__description Под заказ
   .vip-footer
     .container
       p 

@@ -5,7 +5,6 @@ import simpleParallax from "simple-parallax-js";
 
 import topVideo from "./components/top-video";
 import open from "./components/burger";
-import sliderReveal from "./components/sliderReveal";
 import textReveal from "./components/textReveal";
 import revealImage from "./components/revealImage";
 import logoAnimation from "../img/logo-animation.mp4";
@@ -18,10 +17,11 @@ const sliderContainer = document.querySelector(".vip-slider");
 const opener = document.querySelector("#menu-switch");
 const logoVideo = document.querySelector(".logo-video video");
 const productionPicBg = document.querySelector(".production-pic__bg");
+const selectItem = document.querySelector(".selectItem");
 
 new simpleParallax(productionPicBg, {
 	orientation: "right",
-	scale: 1.08,
+	scale: 1.12,
 });
 
 logoVideo.setAttribute("src", logoAnimation);
@@ -49,24 +49,12 @@ observer.observe(logoVideo);
 topVideo();
 opener.addEventListener("click", open);
 
-sliderReveal(sliderContainer);
 textReveal(textContainer);
 revealContainers.forEach(revealImage);
 
-const breakpointTablet = window.matchMedia("(min-width: 768px)");
 const breakpointDesktop = window.matchMedia("(min-width: 1360px)");
 
-let mobileSwiper;
 let emotionsSwiper;
-
-function breakpointTabletChecker() {
-	if (breakpointTablet.matches === false) {
-		return enableMobileSwiper();
-	} else if (breakpointTablet.matches === true) {
-		if (mobileSwiper !== undefined) mobileSwiper.destroy(true, true);
-		return;
-	}
-}
 
 function breakpointDesktopChecker() {
 	if (breakpointDesktop.matches === false) {
@@ -75,19 +63,6 @@ function breakpointDesktopChecker() {
 		if (emotionsSwiper !== undefined) emotionsSwiper.destroy(true, true);
 		return;
 	}
-}
-
-function enableMobileSwiper() {
-	mobileSwiper = new Swiper(".vip-slider", {
-		modules: [Navigation, Pagination],
-		slidesPerView: 1,
-		speed: 500,
-
-		pagination: {
-			el: ".swiper-pagination",
-			type: "progressbar",
-		},
-	});
 }
 
 function enableEmotionsSwiper() {
@@ -194,8 +169,36 @@ new Swiper(".about-slider", {
 	},
 });
 
-breakpointTablet.addEventListener("change", breakpointTabletChecker);
 breakpointDesktop.addEventListener("change", breakpointDesktopChecker);
 
-breakpointTabletChecker();
 breakpointDesktopChecker();
+
+// const woodstockElements = ["woodstock_eben", "woodstock_eben-2", "woodstock_evkalipt", "woodstock_evkalipt", "woodstock_orex"];
+
+// const setActiveEl = (category, arr) => {
+// 	const getActiveEl = document.querySelectorAll(`[data-class="${category}]`);
+// 	console.log(getActiveEl);
+// };
+
+// selectItem.addEventListener("click", (e) => {
+// 	const image = document.querySelector(`.${e.target.dataset.target} img`);
+// 	console.log(image);
+// 	image.src = "../../img/woodstock_eben-2.png";
+// 	// setActiveEl("woodstock", woodstockElements);
+// });
+
+const options = Array.from(document.querySelectorAll("li.option"));
+
+options.forEach((option) => {
+	option.addEventListener("click", (e) => {
+		const image = e.target.closest(".option").dataset.image;
+		const category = e.target.closest(".option").dataset.category;
+		if (image !== undefined) {
+			const element = document.querySelector(`.builder-pics__item.${category} img`);
+			element.src = `../../img/${image}.png`;
+			// console.log(element);
+		}
+	});
+});
+
+// const setDetail = () => {};

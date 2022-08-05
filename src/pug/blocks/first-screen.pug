@@ -2,7 +2,7 @@ include ../mixins/button
 
 .first-screen
     .video
-        video#video
+        video#video(autoplay playsinline)
     .container
         h1.title Мебель, которая вдохновляет на новый  образ жизни
         +button({href:"#catalog", classes: "button-black md-visible"}) Перейти к каталогу

@@ -20,16 +20,17 @@ include ../mixins/button
                     br
                     | Lake Towers, unit number 808-04
         p.contacts-tease 
-            | Оставьте заявку, 
-            br
-            | чтобы заказать мебель
+            | Оставьте заявку, чтобы заказать мебель
         .contacts-form
             form.form(action='' method="POST")
                 .form-row 
-                    input.input(type="text" name="name" )
-                    label.input-label First Name
+                    input.input(type="text" name="name")
+                    label.input-label Имя
+                .form-row 
+                    input.input(type="tel" name="phone")
+                    label.input-label Номер телефона
                 .form-row
                     +button({classes: "button", type: "submit"}) Отправить
-        p 
+        p.center
             | Нажимая на кнопку, вы соглашаетесь 
             span.gold на обработку персональных данных
