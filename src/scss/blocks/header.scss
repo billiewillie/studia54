@@ -309,6 +309,7 @@
 		background-color: var(--gold);
 		right: 0;
 		transform-origin: center;
+		transition: opacity 0.3s ease-in-out;
 	}
 
 	& .menu-switch::before {
@@ -320,8 +321,9 @@
 		background-color: var(--gold);
 		right: 0;
 		height: 1px;
-		transition: transform 0.3s ease-in-out;
-		transform-origin: center;
+		transform: translate3d(0px, 0px, 0) rotate(0);
+
+		transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 	}
 
 	& .menu-switch::after {
@@ -333,8 +335,9 @@
 		background-color: var(--gold);
 		right: 0;
 		height: 1px;
-		transition: transform 0.3s ease-in-out;
-		transform-origin: center;
+		transform: translate3d(0px, 0px, 0) rotate(0);
+
+		transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 	}
 
 	& #menu-switch:checked ~ .menu-switch span {
@@ -347,17 +350,19 @@
 	}
 
 	& #menu-switch:checked ~ .menu-switch:before {
-		-webkit-transform: rotate(45deg);
-		-ms-transform: rotate(45deg);
-		transform: rotate(45deg);
-		top: 50%;
+		// -webkit-transform: rotate(45deg);
+		// -ms-transform: rotate(45deg);
+		// transform: rotate(45deg);
+		// top: 50%;
+		transform: translate3d(6px, 8px, 0) rotate(-45deg);
 	}
 
 	& #menu-switch:checked ~ .menu-switch:after {
-		-webkit-transform: rotate(-45deg);
-		-ms-transform: rotate(-45deg);
-		transform: rotate(-45deg);
-		top: 50%;
+		// -webkit-transform: rotate(-45deg);
+		// -ms-transform: rotate(-45deg);
+		// transform: rotate(-45deg);
+		// top: 50%;
+		transform: translate3d(6px, -8px, 0) rotate(45deg);
 	}
 }
 

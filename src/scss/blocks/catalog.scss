@@ -73,9 +73,11 @@
 			}
 
 			&__text {
-				opacity: 0;
-				bottom: -20px;
-				transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
+				@media (min-width: $lg) {
+					opacity: 0;
+					bottom: -20px;
+					transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
+				}
 			}
 
 			&::before {
