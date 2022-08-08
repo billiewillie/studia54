@@ -46,6 +46,7 @@ let observer = new IntersectionObserver(
 observer.observe(logoVideo);
 
 topVideo();
+
 opener.addEventListener("click", open);
 
 textReveal(textContainer);
@@ -190,10 +191,71 @@ options.forEach((option) => {
 	});
 });
 
+const changeTableButtons = document.querySelectorAll(".changeTable");
+
+const optionsTop = [
+	"../../img/woodstock_eben.png",
+	"../../img/woodstock_eben-2.png",
+	"../../img/woodstock_evkalipt.png",
+	"../../img/woodstock_koto.png",
+	"../../img/woodstock_orex.png",
+];
+
+const optionsAida = ["../../img/aida_black.png", "../../img/aida_blackberry.png", "../../img/aida_grey.png", "../../img/aida_spruce.png"];
+
+const optionsInside = [
+	"../../img/aida_saddle_inside.png",
+	"../../img/aida_grey_inside.png",
+	"../../img/aida_ash_inside.png",
+	"../../img/aida_sand_inside.png",
+];
+
+const setImagePart = (data) => {
+	if (data === "woodstock") {
+		const element = document.querySelector(`.builder-pics__item.woodstock img`);
+		let src = element.getAttribute("src");
+		let index = optionsTop.indexOf(src);
+		if (index < optionsTop.length - 1) {
+			element.setAttribute("src", optionsTop[index + 1]);
+		} else {
+			element.setAttribute("src", optionsTop[0]);
+		}
+	} else if (data === "aida") {
+		const element = document.querySelector(`.builder-pics__item.aida img`);
+		let src = element.getAttribute("src");
+		let index = optionsAida.indexOf(src);
+		if (index < optionsAida.length - 1) {
+			element.setAttribute("src", optionsAida[index + 1]);
+		} else {
+			element.setAttribute("src", optionsAida[0]);
+		}
+	} else if (data === "inside") {
+		const element = document.querySelector(`.builder-pics__item.inside img`);
+		let src = element.getAttribute("src");
+		let index = optionsInside.indexOf(src);
+		if (index < optionsInside.length - 1) {
+			element.setAttribute("src", optionsInside[index + 1]);
+		} else {
+			element.setAttribute("src", optionsInside[0]);
+		}
+	}
+};
+
+changeTableButtons.forEach((button) => {
+	button.addEventListener("click", (e) => {
+		const data = e.target.dataset.image;
+		setImagePart(data);
+	});
+});
+
 window.addEventListener("load", () => {
 	let sectionHeadersTitle = gsap.utils.toArray(".section-header .title");
 	let sectionHeadersSpecial = gsap.utils.toArray(".section-header .special");
 	let sectionHeadersBorder = gsap.utils.toArray(".section-header .border");
+	let collectionPicBig = document.querySelector(".collection-pic");
+	let collectionFooterPic = document.querySelector(".collection-footer__pic");
+	let collectionContent = document.querySelector(".collection-content");
+	let collectionRotatedText = document.querySelector(".collection .rotated");
 
 	sectionHeadersTitle.forEach(function (item) {
 		gsap.fromTo(
@@ -249,6 +311,72 @@ window.addEventListener("load", () => {
 			}
 		);
 	});
+
+	gsap.fromTo(
+		collectionPicBig,
+		{
+			y: 100,
+			autoAlpha: 0,
+		},
+		{
+			y: 0,
+			autoAlpha: 1,
+			duration: 1,
+			scrollTrigger: {
+				trigger: collectionPicBig,
+				start: "top 60%",
+			},
+		}
+	);
+
+	gsap.fromTo(
+		collectionFooterPic,
+		{
+			y: 100,
+			autoAlpha: 0,
+		},
+		{
+			y: 0,
+			autoAlpha: 1,
+			duration: 1,
+			scrollTrigger: {
+				trigger: collectionFooterPic,
+				start: "top 80%",
+			},
+		}
+	);
+
+	gsap.fromTo(
+		collectionContent,
+		{
+			x: -100,
+			autoAlpha: 0,
+		},
+		{
+			x: 0,
+			autoAlpha: 1,
+			duration: 1,
+			scrollTrigger: {
+				trigger: collectionContent,
+				start: "top 80%",
+			},
+		}
+	);
+
+	gsap.fromTo(
+		collectionRotatedText,
+		{
+			autoAlpha: 0,
+		},
+		{
+			autoAlpha: 1,
+			duration: 1,
+			scrollTrigger: {
+				trigger: collectionRotatedText,
+				start: "top 60%",
+			},
+		}
+	);
 });
 
 document.querySelectorAll("img").forEach((img) => {
@@ -257,4 +385,13 @@ document.querySelectorAll("img").forEach((img) => {
 	} else {
 		img.addEventListener("load", (imgLoaded) => ScrollTrigger.refresh());
 	}
+});
+
+const links = document.querySelectorAll(".burger .menu__link");
+links.forEach((link) => {
+	link.addEventListener("click", (e) => {
+		const block = e.target.dataset.href;
+		opener.click();
+		location.href = block;
+	});
 });

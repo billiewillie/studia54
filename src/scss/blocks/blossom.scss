@@ -147,10 +147,10 @@
 
 			& a {
 				text-decoration: underline;
-				text-underline-offset: 3px;
+				text-underline-offset: 4px;
 
 				@media (min-width: $md) {
-					text-underline-offset: 4px;
+					text-underline-offset: 5px;
 				}
 			}
 		}

@@ -175,10 +175,15 @@
 		}
 
 		&__column {
-			width: 232px;
+			width: 100%;
 
 			@media (min-width: $lg) {
 				width: 230px;
+			}
+
+			& .changeTable {
+				margin-bottom: 24px;
+				outline: none;
 			}
 		}
 
