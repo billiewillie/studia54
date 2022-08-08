@@ -15,6 +15,7 @@ const topVideo = function () {
 
 	function videoPlay(videoNum) {
 		element.setAttribute("src", videoSource[videoNum]);
+		element.removeAttribute("controls");
 		element.autoplay = true;
 		element.load();
 	}

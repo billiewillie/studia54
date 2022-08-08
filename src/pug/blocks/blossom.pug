@@ -1,14 +1,13 @@
 include ../mixins/sectionHeader
 
-.blossom
+.blossom#blossom
     .container
         +sectionHeader("blossom", "Flagship product")
         .blossom-row
             .blossom-pic
                 picture
-                    source(media="(min-width: 768px)", srcset="./img/blossom-lg.webp", type="image/webp")
                     source(media="(min-width: 768px)", srcset="./img/blossom-lg.png")
-                    source(srcset="./img/blossom.webp", type="image/webp")
+                    source(srcset="./img/blossom-lg.webp", type="image/webp")
                     img(src="./img/blossom.png", alt="blossom", loading="lazy", width="100%", height="100%")
             .blossom-text
                 p

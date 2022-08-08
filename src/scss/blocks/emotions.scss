@@ -224,6 +224,7 @@
 		& .pic {
 			width: 100%;
 			height: 82vw;
+			overflow: hidden;
 
 			@media (min-width: $md) {
 				height: 58.6vw;

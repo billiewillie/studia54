@@ -298,13 +298,30 @@
 
 	& .swiper-button-prev,
 	& .swiper-button-next {
-		width: 14px;
-		height: 44px;
+		width: 20px;
+		height: 50px;
 		background-repeat: no-repeat;
 		background-size: contain;
+		background-position: right center;
 
 		&::after {
 			display: none;
+		}
+
+		&:hover::before {
+			background-color: rgba(224, 192, 160, 0.5);
+		}
+
+		&::before {
+			display: block;
+			position: absolute;
+			content: "";
+			width: 200%;
+			height: 100%;
+			background-color: rgba(224, 192, 160, 0);
+			filter: blur(35px);
+			transition: background-color 0.3s ease;
+			right: 0;
 		}
 	}
 }

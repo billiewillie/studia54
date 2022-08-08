@@ -13,11 +13,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const revealContainers = document.querySelectorAll(".vip-pic");
 const textContainer = document.querySelector(".vip-text");
-const sliderContainer = document.querySelector(".vip-slider");
 const opener = document.querySelector("#menu-switch");
 const logoVideo = document.querySelector(".logo-video video");
 const productionPicBg = document.querySelector(".production-pic__bg");
-const selectItem = document.querySelector(".selectItem");
 
 new simpleParallax(productionPicBg, {
 	orientation: "right",
@@ -25,6 +23,7 @@ new simpleParallax(productionPicBg, {
 });
 
 logoVideo.setAttribute("src", logoAnimation);
+logoVideo.removeAttribute("controls");
 
 let isPaused = false;
 let observer = new IntersectionObserver(
@@ -173,32 +172,89 @@ breakpointDesktop.addEventListener("change", breakpointDesktopChecker);
 
 breakpointDesktopChecker();
 
-// const woodstockElements = ["woodstock_eben", "woodstock_eben-2", "woodstock_evkalipt", "woodstock_evkalipt", "woodstock_orex"];
-
-// const setActiveEl = (category, arr) => {
-// 	const getActiveEl = document.querySelectorAll(`[data-class="${category}]`);
-// 	console.log(getActiveEl);
-// };
-
-// selectItem.addEventListener("click", (e) => {
-// 	const image = document.querySelector(`.${e.target.dataset.target} img`);
-// 	console.log(image);
-// 	image.src = "../../img/woodstock_eben-2.png";
-// 	// setActiveEl("woodstock", woodstockElements);
-// });
-
 const options = Array.from(document.querySelectorAll("li.option"));
 
 options.forEach((option) => {
 	option.addEventListener("click", (e) => {
 		const image = e.target.closest(".option").dataset.image;
+		const option = e.target.closest(".option");
 		const category = e.target.closest(".option").dataset.category;
+		const list = Array.from(e.target.closest(".vip-options__list").children);
+		list.forEach((item) => item.classList.remove("active"));
+		option.classList.add("active");
+
 		if (image !== undefined) {
 			const element = document.querySelector(`.builder-pics__item.${category} img`);
 			element.src = `../../img/${image}.png`;
-			// console.log(element);
 		}
 	});
 });
 
-// const setDetail = () => {};
+window.addEventListener("load", () => {
+	let sectionHeadersTitle = gsap.utils.toArray(".section-header .title");
+	let sectionHeadersSpecial = gsap.utils.toArray(".section-header .special");
+	let sectionHeadersBorder = gsap.utils.toArray(".section-header .border");
+
+	sectionHeadersTitle.forEach(function (item) {
+		gsap.fromTo(
+			item,
+			{
+				x: -100,
+				autoAlpha: 0,
+			},
+			{
+				x: 0,
+				autoAlpha: 1,
+				duration: 1,
+				scrollTrigger: {
+					trigger: item,
+					start: "top 60%",
+				},
+			}
+		);
+	});
+
+	sectionHeadersSpecial.forEach(function (item) {
+		gsap.fromTo(
+			item,
+			{
+				x: 100,
+				autoAlpha: 0,
+			},
+			{
+				x: 0,
+				autoAlpha: 1,
+				duration: 1,
+				scrollTrigger: {
+					trigger: item,
+					start: "top 60%",
+				},
+			}
+		);
+	});
+
+	sectionHeadersBorder.forEach(function (item) {
+		gsap.fromTo(
+			item,
+			{
+				background: "linear-gradient(270deg, rgba(224, 192, 160, 0.5) 0%, rgba(255, 255, 255, 0) 0%)",
+			},
+			{
+				background: "linear-gradient(270deg, rgba(224, 192, 160, 0.5) 0%, rgba(255, 255, 255, 0) 100%)",
+				duration: 2,
+				scrollTrigger: {
+					trigger: item,
+					start: "top 60%",
+				},
+			}
+		);
+	});
+});
+
+document.querySelectorAll("img").forEach((img) => {
+	if (img.complete) {
+		ScrollTrigger.refresh();
+	} else {
+		img.addEventListener("load", (imgLoaded) => ScrollTrigger.refresh());
+	}
+});
