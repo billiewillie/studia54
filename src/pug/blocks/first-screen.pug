@@ -5,6 +5,6 @@ include ../mixins/button
         video#video(autoplay playsinline)
     .container
         h1.title 
-            | Мебель, которая вдохновляет на новый образ жизни
+            span.left Мебель, которая вдохновляет на 
+            span.right новый образ жизни
         +button({href:"#catalog", classes: "button-black md-visible"}) Перейти к каталогу
-        +button({href:"#catalog", classes: "button md-hidden"}) Перейти к каталогу
