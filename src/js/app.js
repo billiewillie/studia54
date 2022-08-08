@@ -358,7 +358,7 @@ window.addEventListener("load", () => {
 			duration: 1,
 			scrollTrigger: {
 				trigger: collectionContent,
-				start: "top 80%",
+				start: "top 100%",
 			},
 		}
 	);

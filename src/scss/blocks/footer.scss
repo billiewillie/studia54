@@ -79,6 +79,12 @@
 
 				& a.menu__link {
 					color: #fff;
+
+					&::before {
+						@media (min-width: $lg) {
+							background-color: #fff;
+						}
+					}
 				}
 
 				@media (min-width: $md) {

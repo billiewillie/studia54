@@ -176,6 +176,7 @@
 
 		&__column {
 			width: 100%;
+			flex-direction: column;
 
 			@media (min-width: $lg) {
 				width: 230px;
