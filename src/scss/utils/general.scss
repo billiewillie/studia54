@@ -24,6 +24,7 @@ body {
 	max-width: 1360px;
 	padding: 0 24px;
 	display: flex;
+	scroll-snap-type: y mandatory;
 
 	@media (min-width: $md) {
 		padding: 0 48px;

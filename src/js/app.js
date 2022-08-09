@@ -8,6 +8,7 @@ import open from "./components/burger";
 import textReveal from "./components/textReveal";
 import revealImage from "./components/revealImage";
 import logoAnimation from "../img/logo-animation.mp4";
+import aboutSlider from "./components/aboutSlider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -164,7 +165,7 @@ new Swiper(".about-slider", {
 			centeredSlides: false,
 			noSwiping: true,
 			noSwipingClass: ".swiper-slide",
-			speed: 1,
+			// speed: 5,
 		},
 	},
 });
@@ -395,3 +396,5 @@ links.forEach((link) => {
 		location.href = block;
 	});
 });
+
+aboutSlider();
