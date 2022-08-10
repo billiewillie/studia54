@@ -1,5 +1,6 @@
 .blossom {
 	padding: 120px 0 0;
+	scroll-snap-type: y mandatory;
 
 	@media (min-width: $md) {
 		padding: 150px 0 218px;

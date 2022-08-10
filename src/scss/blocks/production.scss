@@ -1,6 +1,7 @@
 .production {
 	padding-top: 121px;
 	position: relative;
+	scroll-snap-align: start;
 
 	@media (min-width: $md) {
 		padding-top: 58px;
@@ -174,6 +175,10 @@
 			width: 200%;
 			height: 100%;
 			background-color: rgba(224, 192, 160, 0);
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
 			filter: blur(50px);
 			transition: background-color 0.3s ease;
 			right: 0;

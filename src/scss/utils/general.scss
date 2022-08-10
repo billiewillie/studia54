@@ -8,13 +8,6 @@ body {
 	background-color: var(--black);
 }
 
-body,
-html {
-	scroll-snap-type: proximity;
-	scroll-snap-points-y: repeat(100vh);
-	scroll-snap-type: y proximity;
-}
-
 .wrapper {
 	display: flex;
 	flex-direction: column;
@@ -22,6 +15,7 @@ html {
 	min-height: 100vh;
 	overflow: hidden;
 	position: relative;
+	scroll-snap-type: y mandatory;
 }
 
 .container {
