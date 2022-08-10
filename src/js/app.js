@@ -51,6 +51,7 @@ topVideo();
 opener.addEventListener("click", open);
 
 textReveal(textContainer);
+
 revealContainers.forEach(revealImage);
 
 const breakpointDesktop = window.matchMedia("(min-width: 1360px)");
@@ -139,6 +140,7 @@ new Swiper(".about-slider", {
 		clickable: true,
 		renderBullet: function (index, className) {
 			const text = aboutData[index];
+
 			return `
 				<div class="${className}">
 					<span class="pagination-text">${text}</span>
@@ -147,8 +149,21 @@ new Swiper(".about-slider", {
 		},
 	},
 	on: {
-		init: function () {
-			console.log("swiper initialized");
+		init: (index) => {
+			const paginations = Array.from(document.querySelectorAll(".about .about-slider .pagination-border"));
+			paginations.forEach((pagination, index) => {
+				pagination.style.opacity = 1;
+				if (index === 1) pagination.style.opacity = 0.5;
+				if (index === 2) pagination.style.opacity = 0.4;
+				if (index === 3) pagination.style.opacity = 0.3;
+				if (index === 4) pagination.style.opacity = 0.2;
+			});
+		},
+		slideChange: (index) => {
+			const paginations = Array.from(document.querySelectorAll(".about .about-slider .pagination-border"));
+			paginations.forEach((pagination) => {
+				if (index.snapIndex === index) pagination.style.opacity = 1;
+			});
 		},
 	},
 
@@ -165,7 +180,6 @@ new Swiper(".about-slider", {
 			centeredSlides: false,
 			noSwiping: true,
 			noSwipingClass: ".swiper-slide",
-			// speed: 5,
 		},
 	},
 });

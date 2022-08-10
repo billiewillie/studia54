@@ -1,12 +1,18 @@
 html {
 	scroll-behavior: smooth;
-	scroll-padding-top: 2vmax;
 }
 
 body {
 	font-family: $font;
 	color: var(--white);
 	background-color: var(--black);
+}
+
+body,
+html {
+	scroll-snap-type: proximity;
+	scroll-snap-points-y: repeat(100vh);
+	scroll-snap-type: y proximity;
 }
 
 .wrapper {
@@ -24,7 +30,6 @@ body {
 	max-width: 1360px;
 	padding: 0 24px;
 	display: flex;
-	scroll-snap-type: y mandatory;
 
 	@media (min-width: $md) {
 		padding: 0 48px;
