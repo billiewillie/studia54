@@ -2,6 +2,7 @@ import Swiper, { Navigation, Pagination } from "swiper";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import simpleParallax from "simple-parallax-js";
+import intlTelInput from "intl-tel-input";
 
 import topVideo from "./components/top-video";
 import open from "./components/burger";
@@ -9,6 +10,37 @@ import textReveal from "./components/textReveal";
 import revealImage from "./components/revealImage";
 import logoAnimation from "../img/logo-animation.mp4";
 import aboutSlider from "./components/aboutSlider";
+import utils from "./components/utils";
+
+// fetch("https://ipinfo.io/json").then((response) => response.json());
+
+const input = document.querySelector("#phone");
+intlTelInput(input, {
+	initialCountry: "ru",
+	onlyCountries: ["us", "gb", "ru", "it"],
+	preferredCountries: [],
+	separateDialCode: true,
+	// placeholderNumberType: "TOLL_FREE",
+	autoPlaceholder: "aggressive",
+	utilsScript: utils,
+	// geoIpLookup: function (callback) {
+	// 	fetch("https://ipinfo.io/json", {
+	// 		cache: "reload",
+	// 	})
+	// 		.then((response) => {
+	// 			if (response.ok) {
+	// 				return response.json();
+	// 			}
+	// 			throw new Error("Failed: " + response.status);
+	// 		})
+	// 		.then((ipjson) => {
+	// 			callback(ipjson.country);
+	// 		})
+	// 		.catch((e) => {
+	// 			callback("us");
+	// 		});
+	// },
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -191,7 +223,7 @@ breakpointDesktopChecker();
 const options = Array.from(document.querySelectorAll("li.option"));
 
 options.forEach((option) => {
-	option.addEventListener("click", (e) => {
+	option.addEventListener("mouseenter", (e) => {
 		const image = e.target.closest(".option").dataset.image;
 		const option = e.target.closest(".option");
 		const category = e.target.closest(".option").dataset.category;

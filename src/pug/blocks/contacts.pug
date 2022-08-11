@@ -24,13 +24,14 @@ include ../mixins/button
         .contacts-form
             form.form(action='' method="POST")
                 .form-row 
-                    input.input(type="text" name="name")
+                    input.input(type="text" name="name" placeholder=" ")
                     label.input-label Имя
+                    .highlight
                 .form-row 
-                    input.input(type="tel" name="phone")
-                    label.input-label Номер телефона
+                    input.input#phone(type="tel" name="phone")
+                    .highlight
                 .form-row
                     +button({classes: "button", type: "submit"}) Отправить
-        p.center
-            | Нажимая на кнопку, вы соглашаетесь 
-            span.gold на обработку персональных данных
+                    p.data-agreement
+                        | Нажимая на кнопку, вы соглашаетесь 
+                        a.gold(href="https://www.google.com") на обработку персональных данных

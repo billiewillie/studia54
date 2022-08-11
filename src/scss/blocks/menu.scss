@@ -5,6 +5,7 @@ ul.menu {
 			text-transform: uppercase;
 			color: var(--gold);
 			position: relative;
+			cursor: pointer;
 
 			&::before {
 				@media (min-width: $lg) {
