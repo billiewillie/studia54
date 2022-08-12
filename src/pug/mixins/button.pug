@@ -1,10 +1,10 @@
-mixin button({href, type, classes, target})
-    if href
+mixin button({to, type, classes, target})
+    if to
         if target
-            a(href= href, class= classes, target= target)
+            a(to= to, class= classes, target= target)
                 block
         else
-            a(href= href, class= classes)
+            a(to= to, class= classes)
                 block
     if type 
         button(type= type, class= classes)

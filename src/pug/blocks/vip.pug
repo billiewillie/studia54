@@ -37,22 +37,22 @@ include ../mixins/sectionHeader
           p.vip-options__column-title.md-visible Cтолешница
           button.md-hidden.changeTable.button(data-image='woodstock') поменять столешницу
           ul.vip-options__list.md-visible
-            li.option.active(data-image='woodstock_eben', data-category="woodstock")
+            li.option.active(data-image='woodstock_eben-2', data-category="woodstock")
               .option-pic(style="background-image: url('../../img/vip-example-11.jpg')")
               .option-about
                 p.option-about__title Эбен 5
                 p.option-about__description Натуральный шпон
-            li.option(data-image='woodstock_eben-2', data-category="woodstock")
+            li.option(data-image='woodstock_koto', data-category="woodstock")
               .option-pic(style="background-image: url('../../img/vip-example-12.jpg')")
               .option-about
                 p.option-about__title KOTO
                 p.option-about__description Натуральный шпон
-            li.option(data-image='woodstock_evkalipt', data-category="woodstock")
+            li.option(data-image='woodstock_eben', data-category="woodstock")
               .option-pic(style="background-image: url('../../img/vip-example-13.jpg')")
               .option-about
                 p.option-about__title Эбен MN
                 p.option-about__description Натуральный шпон
-            li.option(data-image='woodstock_koto', data-category="woodstock")
+            li.option(data-image='woodstock_evkalipt', data-category="woodstock")
               .option-pic(style="background-image: url('../../img/vip-example-14.jpg')")
               .option-about
                 p.option-about__title Эвкалипт
@@ -71,7 +71,7 @@ include ../mixins/sectionHeader
               .option-about
                 p.option-about__title Black ink
                 p.option-about__description Натуральная кожа
-            li.option(data-image='aida_blackberry', data-category="aida")
+            li.option(data-image='aida_spruce', data-category="aida")
               .option-pic(style="background-image: url('../../img/vip-example-22.jpg')")
               .option-about
                 p.option-about__title Spruce
@@ -81,7 +81,7 @@ include ../mixins/sectionHeader
               .option-about
                 p.option-about__title Grey
                 p.option-about__description Натуральная кожа
-            li.option(data-image='aida_spruce', data-category="aida")
+            li.option(data-image='aida_blackberry', data-category="aida")
               .option-pic(style="background-image: url('../../img/vip-example-24.jpg')")
               .option-about
                 p.option-about__title Blackberry
@@ -123,5 +123,5 @@ include ../mixins/sectionHeader
       p 
         span.gold Продемонстрируйте свой статус 
         | и задайте ритм вашей работе
-      button.button 
-        |Подобрать изделие
+      button.button#popup-open
+        | Подобрать изделие

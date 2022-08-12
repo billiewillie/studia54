@@ -3,6 +3,7 @@
 	flex-direction: column;
 	position: relative;
 	overflow: hidden;
+	margin-bottom: 120px;
 
 	@media (min-width: $md) {
 		overflow: visible;
@@ -80,6 +81,7 @@
 	&-pic {
 		margin-bottom: 32px;
 		position: relative;
+		min-height: 350px;
 
 		@media (min-width: $md) {
 			order: 3;

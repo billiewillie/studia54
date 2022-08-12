@@ -1,0 +1,26 @@
+.popup#popup
+  .popup-overlay
+  .popup-content 
+    a.close(style="background-image: url(./img/close.svg);")
+    h2.gold Будьте на шаг ближе к мебели мечты
+    p Оставьте свои контактные данные в форме ниже. Мы перезвоним вам в рабочее время и поможем подобрать изделие
+    .popup-form
+      form.form(action='' method="POST")
+        .form-row 
+          input.input(type="text" name="name" placeholder=" ")
+          label.input-label Имя
+          .highlight
+        .form-row 
+          input.input#phone-popup(type="tel" name="phone")
+          .highlight
+        .form-row 
+          input.input(type="email" name="email" placeholder=" ")
+          label.input-label Email
+          .highlight
+        .form-row
+            +button({classes: "button", type: "submit"}) Отправить
+            p.data-agreement
+              | Нажимая на кнопку, вы соглашаетесь 
+              a.gold(href="https://www.google.com") на обработку персональных данных
+
+

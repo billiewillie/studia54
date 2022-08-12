@@ -1,13 +1,13 @@
 .blossom {
-	padding: 120px 0 0;
+	padding: 0;
 	scroll-snap-type: y mandatory;
 
 	@media (min-width: $md) {
-		padding: 150px 0 218px;
+		padding: 0 0 218px;
 	}
 
 	@media (min-width: $lg) {
-		padding: 275px 0 250px;
+		padding: 0 0 250px;
 	}
 
 	& .container {
@@ -32,6 +32,12 @@
 				}
 			}
 		}
+
+		& .blossom-pic {
+			@media (min-width: $lg) {
+				min-height: 1052px;
+			}
+		}
 	}
 
 	&-row:nth-of-type(3) {
@@ -41,7 +47,16 @@
 
 		& .blossom-pic {
 			position: relative;
+			min-height: 470px;
 			transform: rotate(-3.66deg);
+
+			@media (min-width: $md) {
+				min-height: auto;
+			}
+
+			@media (min-width: $lg) {
+				min-height: 386px;
+			}
 
 			& img {
 				width: 120%;
@@ -147,11 +162,40 @@
 			}
 
 			& a {
+				position: relative;
+				white-space: nowrap;
+				display: inline-block;
 				text-decoration: underline;
-				text-underline-offset: 4px;
 
 				@media (min-width: $md) {
 					text-underline-offset: 5px;
+				}
+
+				@media (min-width: $lg) {
+					text-underline-offset: 0;
+					text-decoration: none;
+				}
+
+				&::before {
+					@media (min-width: $lg) {
+						content: "";
+						position: absolute;
+						width: 100%;
+						height: 1px;
+						bottom: -1px;
+						left: 0;
+						transform: scaleX(0);
+						transform-origin: right;
+						background-color: var(--gold);
+						transition: transform 0.3s ease-in-out;
+					}
+				}
+
+				&:hover::before {
+					@media (min-width: $lg) {
+						transform-origin: left;
+						transform: scaleX(1);
+					}
 				}
 			}
 		}

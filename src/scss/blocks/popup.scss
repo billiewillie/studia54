@@ -1,108 +1,96 @@
-.contacts {
-	padding: 42px 0 120px;
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	backdrop-filter: blur(30px);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	display: none;
+	z-index: 11;
 
-	& .container {
-		flex-direction: column;
+	&.show {
+		display: flex;
 	}
 
-	& .section-header {
-		margin-bottom: 42px;
-
-		@media (min-width: $md) {
-			margin-bottom: 90px;
-		}
-
-		@media (min-width: $lg) {
-			margin-bottom: 166px;
-		}
+	&-overlay {
+		position: absolute;
+		backdrop-filter: blur(30px);
+		z-index: 2;
+		width: 100%;
+		height: 100%;
 	}
 
-	& .locations {
+	&-content {
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 80px;
+		width: calc(100% - 16px);
+		height: 90%;
+		max-height: 550px;
+		max-width: 531px;
+		background-color: var(--black);
+		padding: 8px 16px;
+		overflow-y: scroll;
+		z-index: 2;
+		position: relative;
 
 		@media (min-width: $md) {
-			margin-bottom: 84px;
-			flex-direction: row;
-			justify-content: space-between;
+			overflow: hidden;
+			padding: 40px;
 		}
 
 		@media (min-width: $lg) {
-			margin-bottom: 160px;
-			justify-content: flex-start;
-			column-gap: 140px;
-		}
-
-		&__item {
-			margin-bottom: 32px;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-
-		&__city {
-			margin-bottom: 8px;
-			letter-spacing: $ls5;
-			font-size: 16px;
-			line-height: 21.6px;
-
-			@media (min-width: $md) {
-				font-size: 20px;
-				line-height: 27px;
-				margin-bottom: 30px;
-			}
-
-			@media (min-width: $lg) {
-				font-size: 22px;
-				line-height: 29.7px;
-			}
-		}
-
-		&__address {
-			letter-spacing: $ls5;
-			font-size: 14px;
-			line-height: 18.9px;
-			font-weight: 300;
-
-			& span.gold {
-				font-weight: 400;
-			}
-
-			@media (min-width: $md) {
-				font-size: 18px;
-				line-height: 24.3px;
-			}
-
-			@media (min-width: $lg) {
-				font-size: 22px;
-				line-height: 29.7px;
-			}
+			max-height: inherit;
+			height: auto;
 		}
 	}
 
-	&-tease {
-		margin-bottom: 32px;
-		font-size: 18px;
-		line-height: 19.42px;
-		font-weight: 300;
+	& h2 {
+		font-size: 20px;
+		line-height: 1.2;
+		letter-spacing: $ls2;
+		font-weight: 400;
+		margin-bottom: 16px;
 
 		@media (min-width: $md) {
-			font-size: 24px;
-			line-height: 25.9px;
-			margin-bottom: 32px;
+			font-size: 22px;
+			line-height: 29.7px;
 		}
+	}
+
+	& .close {
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		cursor: pointer;
 
 		@media (min-width: $lg) {
-			font-size: 35px;
-			line-height: 37.76px;
-			margin-bottom: 40px;
+			top: 16px;
+			right: 16px;
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	& p {
+		font-size: 12px;
+		line-height: 1.3;
+		letter-spacing: $ls2;
+		color: rgba(255, 255, 255, 0.8);
+		margin-bottom: 16px;
+
+		@media (min-width: $md) {
+			font-size: 16px;
 		}
 	}
 
 	&-form {
-		margin-bottom: 24px;
 		line-height: 19.42px;
 		font-weight: 300;
 	}
@@ -110,33 +98,20 @@
 	& .form {
 		@media (min-width: $lg) {
 			display: flex;
+			flex-direction: column;
 			align-items: center;
-			column-gap: 32px;
+			column-gap: 0;
 			align-items: flex-start;
+			margin-top: 24px;
 		}
 
 		&-row {
 			position: relative;
 			margin-bottom: 32px;
+			width: 100%;
 
 			@media (min-width: $lg) {
-				margin-bottom: 0;
-			}
-
-			&:nth-child(1) {
-				& .input {
-					@media (min-width: $lg) {
-						width: 281px;
-					}
-				}
-			}
-
-			&:nth-child(2) {
-				& .input {
-					@media (min-width: $lg) {
-						width: 384px;
-					}
-				}
+				margin-bottom: 32px;
 			}
 
 			&:last-child {
@@ -144,18 +119,20 @@
 				margin-bottom: 0;
 
 				@media (min-width: $lg) {
-					margin-top: 0;
-					width: 248px;
+					margin-top: 24px;
 				}
 
 				& .data-agreement {
+					margin: auto;
+					max-width: 285px;
 					text-align: center;
 					margin-top: 16px;
 					letter-spacing: $ls2;
 					font-size: 12px;
 
-					@media (min-width: $lg) {
-						text-align: left;
+					@media (min-width: $md) {
+						font-size: 14px;
+						line-height: 18.9px;
 					}
 				}
 			}
@@ -188,8 +165,12 @@
 					padding: 21px 24px;
 				}
 
-				&#phone {
+				&#phone-popup {
 					@media (min-width: $md) {
+						padding-left: 90px !important;
+					}
+
+					@media (min-width: $lg) {
 						padding-left: 105px !important;
 					}
 				}

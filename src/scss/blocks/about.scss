@@ -1,13 +1,8 @@
 .about {
-	padding-top: 120px;
 	padding-bottom: 120px;
 	position: relative;
 	overflow: hidden;
 	scroll-snap-align: start;
-
-	@media (min-width: $md) {
-		padding-bottom: 150px;
-	}
 
 	&-slider {
 		position: relative;
@@ -40,8 +35,6 @@
 			margin: auto;
 			border-radius: 50%;
 			z-index: -1;
-			background-color: #fff;
-			opacity: 0.5;
 			-webkit-backface-visibility: hidden;
 			-moz-backface-visibility: hidden;
 			-webkit-transform: translate3d(0, 0, 0);
@@ -170,17 +163,12 @@
 			background-position: right center;
 			cursor: pointer;
 
-			&:hover::before {
-				background-color: rgba(224, 192, 160, 0.5);
-			}
-
 			&::before {
 				display: block;
 				position: absolute;
 				content: "";
 				width: 200%;
 				height: 100%;
-				background-color: rgba(224, 192, 160, 0);
 				-webkit-backface-visibility: hidden;
 				-moz-backface-visibility: hidden;
 				-webkit-transform: translate3d(0, 0, 0);
@@ -188,6 +176,10 @@
 				filter: blur(35px);
 				transition: background-color 0.3s ease;
 				right: 0;
+			}
+			&:hover::before {
+				background-color: var(--gold);
+				background-color: rgba(224, 192, 160, 0.5);
 			}
 		}
 

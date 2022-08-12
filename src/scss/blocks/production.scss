@@ -2,6 +2,7 @@
 	padding-top: 121px;
 	position: relative;
 	scroll-snap-align: start;
+	margin-bottom: 105px;
 
 	@media (min-width: $md) {
 		padding-top: 58px;
@@ -69,15 +70,10 @@
 			transition: opacity 0.3s ease;
 		}
 
-		&-active {
-			@media (min-width: $lg) {
-				opacity: 1;
-			}
-		}
-
 		& .pic {
 			height: 64vw;
 			margin-bottom: 24px;
+			min-height: 204px;
 
 			@media (min-width: $lg) {
 				margin-bottom: 42px;
@@ -99,6 +95,8 @@
 		& .text {
 			text-align: left;
 			padding-left: 24px;
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
 
 			@media (min-width: $md) {
 				padding-left: 0px;
@@ -110,6 +108,8 @@
 				line-height: 21.6px;
 				letter-spacing: $ls5;
 				margin-bottom: 8px;
+				transform: translateX(15px);
+				transition: transform 0.3s ease-in-out;
 
 				@media (min-width: $md) {
 					font-size: 22px;
@@ -122,6 +122,8 @@
 				font-size: 14px;
 				line-height: 18.9px;
 				font-weight: 300;
+				transform: translateX(30px);
+				transition: transform 0.3s ease-in-out;
 
 				@media (min-width: $md) {
 					font-size: 16px;
@@ -131,6 +133,36 @@
 				@media (min-width: $lg) {
 					font-size: 18px;
 					line-height: 24.3px;
+				}
+			}
+		}
+
+		&-prev {
+			& .text {
+				& .title {
+					transform: translateX(-15px);
+				}
+
+				& p {
+					transform: translateX(-30px);
+				}
+			}
+		}
+
+		&-active {
+			@media (min-width: $lg) {
+				opacity: 1;
+			}
+
+			& .text {
+				opacity: 1;
+
+				& .title {
+					transform: translateX(0);
+				}
+
+				& p {
+					transform: translateX(0);
 				}
 			}
 		}
@@ -221,7 +253,7 @@
 		@media (min-width: $lg) {
 			margin-bottom: 0px;
 			order: 2;
-			flex-grow: 2;
+			width: 608px;
 		}
 	}
 

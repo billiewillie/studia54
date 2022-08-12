@@ -310,6 +310,7 @@
 		right: 0;
 		transform-origin: center;
 		transition: opacity 0.3s ease-in-out;
+		z-index: 1;
 	}
 
 	& .menu-switch::before {

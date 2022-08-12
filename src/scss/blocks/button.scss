@@ -45,6 +45,7 @@
 	&:hover::before {
 		background: rgba(224, 192, 160, 0.4);
 		filter: blur(50px);
+		outline: none;
 	}
 
 	&:active {
@@ -54,6 +55,7 @@
 
 	&:active::before {
 		background: rgba(224, 192, 160, 0.05);
+		outline: none;
 	}
 }
 

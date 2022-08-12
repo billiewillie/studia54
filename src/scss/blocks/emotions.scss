@@ -1,5 +1,6 @@
 .emotions {
 	padding-bottom: 103px;
+	scroll-snap-align: start;
 
 	&-slider {
 		position: relative;
@@ -79,7 +80,7 @@
 
 	& .swiper-slide {
 		width: 75vw;
-		overflow: hidden;
+		// overflow: hidden;
 		align-items: center;
 		flex-direction: column;
 
