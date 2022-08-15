@@ -635,4 +635,14 @@ popupClose.addEventListener("click", (e) => {
 	}, 300);
 });
 
-popupOverlay.addEventListener("click", (e) => popup.classList.remove("show"));
+popupOverlay.addEventListener("click", (e) => {
+	popupOverlay.classList.add("hide");
+	popupContent.classList.add("hide");
+
+	setTimeout(() => {
+		popupOverlay.classList.remove("hide", "show");
+		popupContent.classList.remove("hide", "show");
+
+		popup.classList.remove("show");
+	}, 300);
+});
