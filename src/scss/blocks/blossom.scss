@@ -117,6 +117,7 @@
 	&-text {
 		position: relative;
 		margin-top: -60px;
+		letter-spacing: 1.02px;
 
 		@media (min-width: $md) {
 			margin-top: 0px;
@@ -166,6 +167,7 @@
 				white-space: nowrap;
 				display: inline-block;
 				text-decoration: underline;
+				text-underline-offset: 4px;
 
 				@media (min-width: $md) {
 					text-underline-offset: 5px;

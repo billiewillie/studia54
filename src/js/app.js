@@ -281,8 +281,13 @@ options.forEach((option) => {
 
 window.addEventListener("load", () => {
 	let sectionHeadersTitle = gsap.utils.toArray(".section-header .title");
+	let aboutSlider = document.querySelector(".about-slider");
+	let productionSlider = document.querySelector(".production-slider");
+	let emotionsSlider = document.querySelector(".emotions-slider");
 	let sectionHeadersSpecial = gsap.utils.toArray(".section-header .special");
 	let sectionHeadersBorder = gsap.utils.toArray(".section-header .border");
+	let emotionsPics = gsap.utils.toArray(".emotions .pic");
+	let emotionsTexts = gsap.utils.toArray(".emotions .text");
 	let collectionPicBig = document.querySelector(".collection-pic");
 	let collectionFooterPic = document.querySelector(".collection-footer__pic");
 	let collectionContent = document.querySelector(".collection-content");
@@ -342,6 +347,99 @@ window.addEventListener("load", () => {
 			}
 		);
 	});
+
+	if (window.matchMedia("(max-width: 1359px)").matches) {
+		gsap.fromTo(
+			aboutSlider,
+			{
+				y: 50,
+				autoAlpha: 0,
+			},
+			{
+				y: 0,
+				autoAlpha: 1,
+				duration: 1,
+				scrollTrigger: {
+					trigger: aboutSlider,
+					start: "top 95%",
+				},
+			}
+		);
+
+		gsap.fromTo(
+			emotionsSlider,
+			{
+				y: 50,
+				autoAlpha: 0,
+			},
+			{
+				y: 0,
+				autoAlpha: 1,
+				duration: 1,
+				scrollTrigger: {
+					trigger: emotionsSlider,
+					start: "top 95%",
+				},
+			}
+		);
+
+		gsap.fromTo(
+			productionSlider,
+			{
+				y: 50,
+				autoAlpha: 0,
+			},
+			{
+				y: 0,
+				autoAlpha: 1,
+				duration: 1,
+				scrollTrigger: {
+					trigger: productionSlider,
+					start: "top 95%",
+				},
+			}
+		);
+	}
+
+	if (window.matchMedia("(min-width: 1360px)").matches) {
+		emotionsPics.forEach(function (item) {
+			gsap.fromTo(
+				item,
+				{
+					y: 100,
+					autoAlpha: 0,
+				},
+				{
+					y: 0,
+					autoAlpha: 1,
+					duration: 1,
+					scrollTrigger: {
+						trigger: item,
+						start: "top 60%",
+					},
+				}
+			);
+		});
+
+		emotionsTexts.forEach(function (item) {
+			gsap.fromTo(
+				item,
+				{
+					y: -50,
+					autoAlpha: 0,
+				},
+				{
+					y: 0,
+					autoAlpha: 1,
+					duration: 1,
+					scrollTrigger: {
+						trigger: item,
+						start: "top 60%",
+					},
+				}
+			);
+		});
+	}
 
 	gsap.fromTo(
 		collectionPicBig,
@@ -516,8 +614,8 @@ aboutSlider();
 const popup = document.querySelector("#popup");
 const popupClose = document.querySelector("#popup .close");
 const popupOverlay = document.querySelector("#popup .popup-overlay");
-
 const openPopup = document.querySelector("#popup-open");
+
 openPopup.addEventListener("click", (e) => popup.classList.add("show"));
 popupClose.addEventListener("click", (e) => popup.classList.remove("show"));
 popupOverlay.addEventListener("click", (e) => popup.classList.remove("show"));
