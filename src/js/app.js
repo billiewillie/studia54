@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import simpleParallax from "simple-parallax-js";
 import intlTelInput from "intl-tel-input";
-// import PanelSnap from "panelsnap";
 
 import topVideo from "./components/top-video";
 import open from "./components/burger";
@@ -88,7 +87,6 @@ new simpleParallax(productionPicBg, {
 logoVideo.setAttribute("src", logoAnimation);
 logoVideo.removeAttribute("controls");
 
-let isPaused = false;
 let observer = new IntersectionObserver(
 	(entries, observer) => {
 		entries.forEach((entry) => {
@@ -228,7 +226,49 @@ new Swiper(".about-slider", {
 		slideChange: (index) => {
 			const paginations = Array.from(document.querySelectorAll(".about .about-slider .pagination-border"));
 			paginations.forEach((pagination) => {
-				if (index.snapIndex === index) pagination.style.opacity = 1;
+				if (index.snapIndex === 4) {
+					paginations[index.snapIndex - 4].style.opacity = 0.2;
+					paginations[index.snapIndex - 3].style.opacity = 0.3;
+					paginations[index.snapIndex - 2].style.opacity = 0.4;
+					paginations[index.snapIndex - 1].style.opacity = 0.5;
+					paginations[index.snapIndex].style.opacity = 1;
+				} else if (index.snapIndex === 5) {
+					paginations[index.snapIndex - 5].style.opacity = 1;
+					paginations[index.snapIndex - 4].style.opacity = 0.5;
+					paginations[index.snapIndex - 3].style.opacity = 0.4;
+					paginations[index.snapIndex - 2].style.opacity = 0.3;
+					paginations[index.snapIndex - 1].style.opacity = 0.2;
+				} else if (index.snapIndex === 6) {
+					paginations[index.snapIndex - 6].style.opacity = 0.5;
+					paginations[index.snapIndex - 5].style.opacity = 1;
+					paginations[index.snapIndex - 4].style.opacity = 0.5;
+					paginations[index.snapIndex - 3].style.opacity = 0.4;
+					paginations[index.snapIndex - 2].style.opacity = 0.3;
+				} else if (index.snapIndex === 7) {
+					paginations[index.snapIndex - 7].style.opacity = 0.4;
+					paginations[index.snapIndex - 6].style.opacity = 0.5;
+					paginations[index.snapIndex - 5].style.opacity = 1;
+					paginations[index.snapIndex - 4].style.opacity = 0.5;
+					paginations[index.snapIndex - 3].style.opacity = 0.4;
+				} else if (index.snapIndex === 8) {
+					paginations[index.snapIndex - 8].style.opacity = 0.3;
+					paginations[index.snapIndex - 7].style.opacity = 0.4;
+					paginations[index.snapIndex - 6].style.opacity = 0.5;
+					paginations[index.snapIndex - 5].style.opacity = 1;
+					paginations[index.snapIndex - 4].style.opacity = 0.5;
+				} else if (index.snapIndex === 9) {
+					paginations[index.snapIndex - 9].style.opacity = 0.2;
+					paginations[index.snapIndex - 8].style.opacity = 0.3;
+					paginations[index.snapIndex - 7].style.opacity = 0.4;
+					paginations[index.snapIndex - 6].style.opacity = 0.5;
+					paginations[index.snapIndex - 5].style.opacity = 1;
+				} else if (index.snapIndex === 10) {
+					paginations[index.snapIndex - 10].style.opacity = 1;
+					paginations[index.snapIndex - 9].style.opacity = 0.5;
+					paginations[index.snapIndex - 8].style.opacity = 0.4;
+					paginations[index.snapIndex - 7].style.opacity = 0.3;
+					paginations[index.snapIndex - 6].style.opacity = 0.2;
+				}
 			});
 		},
 	},
@@ -271,13 +311,6 @@ options.forEach((option) => {
 		}
 	});
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-// 	new PanelSnap({
-// 		container: document.body,
-// 		// panelSelector: "> .snap",
-// 	});
-// });
 
 window.addEventListener("load", () => {
 	let sectionHeadersTitle = gsap.utils.toArray(".section-header .title");
@@ -646,3 +679,5 @@ popupOverlay.addEventListener("click", (e) => {
 		popup.classList.remove("show");
 	}, 300);
 });
+
+const wrapper = document.querySelector(".wrapper");

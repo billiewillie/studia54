@@ -28,9 +28,9 @@ body {
 	flex-direction: column;
 	width: 100%;
 	min-height: 100vh;
-	overflow: hidden;
+	overflow-x: hidden;
 	position: relative;
-	scroll-snap-type: y mandatory;
+	scroll-snap-type: y proximity;
 }
 
 .container {
