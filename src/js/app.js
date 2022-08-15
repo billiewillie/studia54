@@ -294,21 +294,37 @@ breakpointDesktop.addEventListener("change", breakpointDesktopChecker);
 
 breakpointDesktopChecker();
 
-const options = Array.from(document.querySelectorAll("li.option"));
+const optionsList = Array.from(document.querySelectorAll(".vip-options__list"));
+optionsList.forEach((list) => {
+	let isClicked = false;
+	const options = Array.from(list.querySelectorAll("li.option"));
 
-options.forEach((option) => {
-	option.addEventListener("mouseenter", (e) => {
-		const image = e.target.closest(".option").dataset.image;
-		const option = e.target.closest(".option");
-		const category = e.target.closest(".option").dataset.category;
-		const list = Array.from(e.target.closest(".vip-options__list").children);
-		list.forEach((item) => item.classList.remove("active"));
-		option.classList.add("active");
+	options.forEach((option) => {
+		option.addEventListener("mouseenter", (e) => {
+			if (isClicked === false) {
+				const image = e.target.closest(".option").dataset.image;
+				const category = e.target.closest(".option").dataset.category;
+				options.forEach((item) => item.classList.remove("active"));
+				option.classList.add("active");
 
-		if (image !== undefined) {
-			const element = document.querySelector(`.builder-pics__item.${category} img`);
-			element.src = `../../img/${image}.png`;
-		}
+				if (image !== undefined) {
+					const element = document.querySelector(`.builder-pics__item.${category} img`);
+					element.src = `../../img/${image}.png`;
+				}
+			}
+		});
+		option.addEventListener("click", (e) => {
+			isClicked = true;
+			const image = e.target.closest(".option").dataset.image;
+			const category = e.target.closest(".option").dataset.category;
+			options.forEach((item) => item.classList.remove("active"));
+			option.classList.add("active");
+
+			if (image !== undefined) {
+				const element = document.querySelector(`.builder-pics__item.${category} img`);
+				element.src = `../../img/${image}.png`;
+			}
+		});
 	});
 });
 
