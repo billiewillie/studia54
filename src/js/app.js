@@ -614,8 +614,25 @@ aboutSlider();
 const popup = document.querySelector("#popup");
 const popupClose = document.querySelector("#popup .close");
 const popupOverlay = document.querySelector("#popup .popup-overlay");
+const popupContent = document.querySelector("#popup .popup-content");
 const openPopup = document.querySelector("#popup-open");
 
-openPopup.addEventListener("click", (e) => popup.classList.add("show"));
-popupClose.addEventListener("click", (e) => popup.classList.remove("show"));
+openPopup.addEventListener("click", (e) => {
+	popup.classList.add("show");
+	popupOverlay.classList.add("show");
+	popupContent.classList.add("show");
+});
+
+popupClose.addEventListener("click", (e) => {
+	popupOverlay.classList.add("hide");
+	popupContent.classList.add("hide");
+
+	setTimeout(() => {
+		popupOverlay.classList.remove("hide", "show");
+		popupContent.classList.remove("hide", "show");
+
+		popup.classList.remove("show");
+	}, 300);
+});
+
 popupOverlay.addEventListener("click", (e) => popup.classList.remove("show"));
