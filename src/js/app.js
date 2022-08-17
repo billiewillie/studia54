@@ -473,13 +473,13 @@ window.addEventListener("load", () => {
 			gsap.fromTo(
 				item,
 				{
-					y: -50,
+					y: -20,
 					autoAlpha: 0,
 				},
 				{
 					y: 0,
 					autoAlpha: 1,
-					duration: 1,
+					duration: 0.6,
 					scrollTrigger: {
 						trigger: item,
 						start: "top 60%",
