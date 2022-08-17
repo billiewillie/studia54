@@ -1,4 +1,4 @@
-mixin button({to, type, classes, target})
+mixin button({to, type, classes, target, href})
     if to
         if target
             a(to= to, class= classes, target= target)
@@ -8,4 +8,7 @@ mixin button({to, type, classes, target})
                 block
     if type 
         button(type= type, class= classes)
+            block
+    if href 
+        a(href= href, class= classes)
             block

@@ -80,8 +80,7 @@ const logoVideo = document.querySelector(".logo-video video");
 const productionPicBg = document.querySelector(".production-pic__bg");
 
 new simpleParallax(productionPicBg, {
-	orientation: "right",
-	scale: 1.12,
+	orientation: "down",
 });
 
 logoVideo.setAttribute("src", logoAnimation);
