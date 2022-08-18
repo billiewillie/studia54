@@ -45,6 +45,23 @@
 			line-height: 73.42px;
 		}
 
+		&.title-short {
+			& span {
+				@media (min-width: $md) {
+					display: flex;
+					width: 60%;
+					justify-content: flex-end;
+				}
+
+				&:nth-child(2) {
+					@media (min-width: $md) {
+						align-self: flex-end;
+						justify-content: flex-start;
+					}
+				}
+			}
+		}
+
 		& span {
 			transform: translate(0, -100%);
 			animation: revealDown 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.8s forwards;

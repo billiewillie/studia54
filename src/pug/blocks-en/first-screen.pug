@@ -4,8 +4,8 @@ include ../mixins/button
     .video
         video#video(autoplay playsinline)
     .container
-        h1.title 
+        h1.title.title-short
             span.left Furniture that inspires 
-            span.right a new lifestyle
+            span.right a new way of living
         +button({to:"#catalog", classes: "button-black md-visible"}) Shop now
         +button({to:"#catalog", classes: "button md-hidden"}) Shop now
