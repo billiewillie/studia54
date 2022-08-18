@@ -1,0 +1,33 @@
+include ../mixins/sectionHeader
+
+.blossom.snap#blossom
+    .container
+        +sectionHeader("blossom", "Flagship product")
+        .blossom-row
+            .blossom-pic
+                picture
+                    source(media="(min-width: 768px)", srcset="./img/blossom-lg.png")
+                    source(srcset="./img/blossom-lg.webp", type="image/webp")
+                    img(src="./img/blossom.png", alt="blossom", loading="lazy", width="100%", height="100%")
+            .blossom-text
+                p
+                    span.gold Blossom 
+                    | is a collection of journal and coffee tables which recreate a unique process of blossoming in their appearance, 
+                    | from a fragile bud to a powerful strong flower.
+                p
+                    | The combination of a sleek real leather and soft suede of Italian production, 
+                    | black glass, which reminds of obsidian, 
+                    | and soft proportions – we offer a new understanding of the modern luxury atmosphere. 
+                p.right
+                    a.gold(href="https://studia-54.store/cabinetfurniture/coffeetables" target="_blank") Shop now 
+        .blossom-row.md-visible
+            .blossom-text
+                p.faded.md-visible fiftyfourms reasons to fall in love
+                p
+                    | The debut collection from Studia 54 was developed by brand designers and Production 54’ specialists. 
+                    | The concept was in the synthesis of functionality, fantasy, and the search for new solutions. 
+                    | This is how we got a “calling card” form of our brand. 
+            .blossom-pic
+                pictured
+                    img(src="./img/blossom-history.jpg", alt="blossom", loading="lazy", width="100%", height="100%")
+        

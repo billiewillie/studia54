@@ -4,16 +4,16 @@ header.header
     .header-top.lg-visible
         .container
             .lang
-                a.navigation__lang-link.active(href="/") ru
+                a.navigation__lang-link(href="/") ru
                 | |
-                a.navigation__lang-link(href="/en.html") en
+                a.navigation__lang-link.active(href="/en.html") en
     .container
         .header-left.md-visible
             ul.menu 
                 li.menu__item.lg-visible
-                    a.menu__link(data-href="#about") о бренде
+                    a.menu__link(data-href="#about") Brand
                 li.menu__item 
-                    a.menu__link(data-href="#collection") Коллекция 2022
+                    a.menu__link(data-href="#collection") Collection 2022
                 li.menu__item.lg-visible
                     a.menu__link(data-href="#blossom") Blossom
         .logo
@@ -21,13 +21,13 @@ header.header
         .header-right
             ul.menu.lg-visible
                 li.menu__item
-                    a.menu__link(data-href="#catalog") Каталог
+                    a.menu__link(data-href="#catalog") Catalogue
                 //- li.menu__item 
                 //-     a.menu__link(href="#team") Команда
                 li.menu__item
                     a.menu__link(data-href="#vip") VIP
                 li.menu__item
-                    a.menu__link(data-href="#contacts") Контакты
+                    a.menu__link(data-href="#contacts") Contacts
             .lang.md-visible.lg-hidden
                 a.navigation__lang-link(href="") ru
                 | |
@@ -42,19 +42,19 @@ header.header
                         a.navigation__lang-link(href="") en
                     ul.menu 
                         li.menu__item
-                            a.menu__link(data-href="#about") о бренде
+                            a.menu__link(data-href="#about") Brand
                         li.menu__item.md-hidden
-                            a.menu__link(data-href="#collection") Коллекция 2022
+                            a.menu__link(data-href="#collection") Collection 2022
                         li.menu__item
                             a.menu__link(data-href="#blossom") Blossom
                         li.menu__item
-                            a.menu__link(data-href="#catalog") Каталог
+                            a.menu__link(data-href="#catalog") Catalogue
                         //- li.menu__item 
                         //-     a.menu__link(data-href="#about") Команда
                         li.menu__item
                             a.menu__link(data-href="#vip") VIP
                         li.menu__item
-                            a.menu__link(data-href="#contacts") Контакты
+                            a.menu__link(data-href="#contacts") Contacts
                         li.menu__item.md-hidden
                             a.menu__link.gold(href="https://studia-54.store/") STORE 54
                     +button({classes: "button navigation__call md-hidden", href:"tel:+78881234567"}) Позвонить

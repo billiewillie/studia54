@@ -1,0 +1,159 @@
+include ../mixins/sectionHeader
+
+.about.snap#about
+    .container
+        +sectionHeader("Brand story", "Timeline")
+    .about-slider-lg.lg-visible
+        .about-slider-text
+            .about-slide-text.slide-text-0
+                h2.title How it all started
+                p.text
+                    | Specially for the Salone del Mobile 2020 exhibition in Italy, 
+                    | the designers of Studia 54 and Medea 1905 factory have created an exclusive collection of furniture. 
+                    | “Fulfilling wishes” is a concept, 
+                    | in which the designers successfully combined the traditions of high furniture art and innovations.
+                    br
+                    | Premium Italian materials, exquisite design, a kaleidoscope of textures and shapes – this is the beginning of our multibrand platform Store 54.
+            .about-slide-text.slide-text-1
+                h2.title 
+                    b Store 54 
+                    | creation
+                p.text
+                    | In an online store there is a luxury furniture that simultaneously reflects the stylistics of the company and underlines the exquisite taste of its owner. 
+                    | Every model is assembled only from high-quality materials. Combined with an original design and a unified style, our furniture becomes a true home decoration and stays relevant for a long time. 
+            .about-slide-text.slide-text-2
+                h2.title The opening of Production 54 - a big manufacture in the center of Saint&#8209;Petersburg 
+                p.text
+                    | We have organized a big dynamic production of exclusive furniture pieces with highest quality. 
+                    | 1500 sq.m. carpentry shop fitted with modern equipment which allows to work with various materials.
+            .about-slide-text.slide-text-3
+                h2.title Soft furniture shop opening
+                p.text
+                    | Meanwile, we came up with the decision to start creating upholstered furniture. 
+                    | To implement all design ideas in full, a soft shop was opened in Production 54. 
+                    | We have already managed to create a successful collection, including sofas, banquettes, poufs and bedroom products. And this is just the beginning. 
+            .about-slide-text.slide-text-4
+                h2.title The birth of FIFTYFOURMS
+                p.text
+                    | FIFTYFOURMS is our response to the growing demand for quality products with exclusive design. 
+                    | This is a story about the search for new forms and design solutions, 
+                    | the combination of smooth and complex lines, the selection of the best materials for the implementation of the idea. 
+                    | We are not just a brand: behind the name, there is a real art process of creating unique  modern luxurious items.
+        .about-slider-pictures
+            .about-slide-picture.slide-picture-0
+                .pic
+                    picture
+                        img(src="./img/about11.jpg", alt="about11", loading="lazy")
+                .pic-small
+                    picture
+                        img(src="./img/about12.jpg", alt="about11", loading="lazy")
+            .about-slide-picture.slide-picture-1
+                .pic
+                    picture
+                        img(src="./img/about21.jpg", alt="about12", loading="lazy")
+                .pic-small
+                    picture
+                        img(src="./img/about22.jpg", alt="about11", loading="lazy")
+            .about-slide-picture.slide-picture-2
+                .pic
+                    picture
+                        img(src="./img/about31.jpg", alt="about13", loading="lazy")
+                .pic-small
+                    picture
+                        img(src="./img/about32.jpg", alt="about11", loading="lazy")
+            .about-slide-picture.slide-picture-3
+                .pic
+                    picture
+                        img(src="./img/about41.jpg", alt="about12", loading="lazy")
+                .pic-small
+                    picture
+                        img(src="./img/production-2.jpg", alt="about11", loading="lazy")
+            .about-slide-picture.slide-picture-4
+                .pic
+                    picture
+                        img(src="./img/about51.jpg", alt="about13", loading="lazy")
+                .pic-small
+                    picture
+                        img(src="./img/about52.jpg", alt="about11", loading="lazy")
+        .button-next(style="background-image: url('../../img/slider-arrow.svg');")
+        .button-prev(style="background-image: url('../../img/slider-arrow.svg');")
+    .about-slider.lg-hidden
+        .swiper-wrapper
+            .swiper-slide
+                .slide-pictures
+                    .pic
+                        picture
+                            img(src="./img/about11.jpg", alt="about11", loading="lazy")
+                    .pic-small.md-visible
+                        picture
+                            img(src="./img/about12.jpg", alt="about12", loading="lazy")
+                .slide-content
+                    .slide-title How it all started
+                    .slide-text 
+                        | Specially for the Salone del Mobile 2020 exhibition in Italy, 
+                        | the designers of Studia 54 and Medea 1905 factory have created an exclusive collection of furniture. 
+                        | “Fulfilling wishes” is a concept, 
+                        | in which the designers successfully combined the traditions of high furniture art and innovations.
+                        br
+                        | Premium Italian materials, exquisite design, a kaleidoscope of textures and shapes – this is the beginning of our multibrand platform Store 54.
+            .swiper-slide
+                .slide-pictures
+                    .pic
+                        picture
+                            img(src="./img/about21.jpg", alt="about21", loading="lazy")
+                    .pic-small.md-visible
+                        picture
+                            img(src="./img/about12.jpg", alt="about22", loading="lazy")
+                .slide-content
+                    .slide-title                     
+                        b Store 54 
+                        | creation
+                    .slide-text 
+                        | In an online store there is a luxury furniture that simultaneously reflects the stylistics of the company and underlines the exquisite taste of its owner. 
+                        | Every model is assembled only from high-quality materials. Combined with an original design and a unified style, our furniture becomes a true home decoration and stays relevant for a long time. 
+            .swiper-slide
+                .slide-pictures
+                    .pic
+                        picture
+                            img(src="./img/about31.jpg", alt="about31", loading="lazy")
+                    .pic-small.md-visible
+                        picture
+                            img(src="./img/about12.jpg", alt="about32", loading="lazy")
+                .slide-content
+                    .slide-title 
+                        | The opening of Production 54 - a big manufacture in the center of Saint&#8209;Petersburg 
+                    .slide-text 
+                        | We have organized a big dynamic production of exclusive furniture pieces with highest quality. 
+                        | 1500 sq.m. carpentry shop fitted with modern equipment which allows to work with various materials.
+            .swiper-slide
+                .slide-pictures
+                    .pic
+                        picture
+                            img(src="./img/about41.jpg", alt="about41", loading="lazy")
+                    .pic-small.md-visible
+                        picture
+                            img(src="./img/about12.jpg", alt="about42", loading="lazy")
+                .slide-content
+                    .slide-title Soft furniture shop opening
+                    .slide-text 
+                        | Meanwile, we came up with the decision to start creating upholstered furniture. 
+                        | To implement all design ideas in full, a soft shop was opened in Production 54. 
+                        | We have already managed to create a successful collection, including sofas, banquettes, poufs and bedroom products. And this is just the beginning. 
+            .swiper-slide
+                .slide-pictures
+                    .pic
+                        picture
+                            img(src="./img/about51.jpg", alt="about51", loading="lazy")
+                    .pic-small.md-visible
+                        picture
+                            img(src="./img/about12.jpg", alt="about52", loading="lazy")
+                .slide-content
+                    .slide-title The birth of FIFTYFOURMS
+                    .slide-text 
+                        | FIFTYFOURMS is our response to the growing demand for quality products with exclusive design. 
+                        | This is a story about the search for new forms and design solutions, 
+                        | the combination of smooth and complex lines, the selection of the best materials for the implementation of the idea. 
+                        | We are not just a brand: behind the name, there is a real art process of creating unique  modern luxurious items.
+        .swiper-button-next.lg-visible(style="background-image: url('../../img/slider-arrow.svg');")
+        .swiper-button-prev.lg-visible(style="background-image: url('../../img/slider-arrow.svg');")
+        .swiper-pagination

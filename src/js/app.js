@@ -12,63 +12,33 @@ import logoAnimation from "../img/logo-animation.mp4";
 import aboutSlider from "./components/aboutSlider";
 import utils from "./components/utils";
 
-// fetch("https://ipinfo.io/json").then((response) => response.json());
-
 const input = document.querySelector("#phone");
 const inputPopup = document.querySelector("#phone-popup");
 
-intlTelInput(inputPopup, {
-	initialCountry: "ru",
-	onlyCountries: ["us", "gb", "ru", "it"],
-	preferredCountries: [],
-	separateDialCode: true,
-	// placeholderNumberType: "TOLL_FREE",
-	autoPlaceholder: "aggressive",
-	utilsScript: utils,
-	// geoIpLookup: function (callback) {
-	// 	fetch("https://ipinfo.io/json", {
-	// 		cache: "reload",
-	// 	})
-	// 		.then((response) => {
-	// 			if (response.ok) {
-	// 				return response.json();
-	// 			}
-	// 			throw new Error("Failed: " + response.status);
-	// 		})
-	// 		.then((ipjson) => {
-	// 			callback(ipjson.country);
-	// 		})
-	// 		.catch((e) => {
-	// 			callback("us");
-	// 		});
-	// },
-});
-
-intlTelInput(input, {
-	initialCountry: "ru",
-	onlyCountries: ["us", "gb", "ru", "it"],
-	preferredCountries: [],
-	separateDialCode: true,
-	// placeholderNumberType: "TOLL_FREE",
-	autoPlaceholder: "aggressive",
-	utilsScript: utils,
-	// geoIpLookup: function (callback) {
-	// 	fetch("https://ipinfo.io/json", {
-	// 		cache: "reload",
-	// 	})
-	// 		.then((response) => {
-	// 			if (response.ok) {
-	// 				return response.json();
-	// 			}
-	// 			throw new Error("Failed: " + response.status);
-	// 		})
-	// 		.then((ipjson) => {
-	// 			callback(ipjson.country);
-	// 		})
-	// 		.catch((e) => {
-	// 			callback("us");
-	// 		});
-	// },
+[inputPopup, input].forEach((item) => {
+	intlTelInput(item, {
+		initialCountry: "auto",
+		onlyCountries: ["us", "gb", "ru", "it"],
+		preferredCountries: [],
+		separateDialCode: true,
+		autoPlaceholder: "aggressive",
+		utilsScript: utils,
+		geoIpLookup: function (callback) {
+			fetch("https://ipinfo.io/json?token=54d750e49e507b")
+				.then((response) => {
+					if (response.ok) {
+						return response.json();
+					}
+					throw new Error("Failed: " + response.status);
+				})
+				.then((ipjson) => {
+					callback(ipjson.country);
+				})
+				.catch((e) => {
+					callback("us");
+				});
+		},
+	});
 });
 
 gsap.registerPlugin(ScrollTrigger);
@@ -294,6 +264,7 @@ breakpointDesktop.addEventListener("change", breakpointDesktopChecker);
 breakpointDesktopChecker();
 
 const optionsList = Array.from(document.querySelectorAll(".vip-options__list"));
+
 optionsList.forEach((list) => {
 	let isClicked = false;
 	const options = Array.from(list.querySelectorAll("li.option"));

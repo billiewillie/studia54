@@ -1,0 +1,37 @@
+include ../mixins/sectionHeader
+include ../mixins/button
+
+.contacts#contacts
+    .container
+        +sectionHeader("Контакты", "Our location")
+        .locations
+            .locations__item
+                h3.locations__city.gold Russia, Saint - Petersburg
+                p.locations__address 
+                    span.gold Address: 
+                    | Novgorodskaya, 23 A, 
+                    br
+                    | office 340 (reservation required) 
+            .locations__item
+                h3.locations__city.gold Dubai, DMCC, UAE
+                p.locations__address 
+                    span.gold Address: 
+                    | Platinum Tower, Jumeirah
+                    br
+                    | Lake Towers, unit number 808-04
+        p.contacts-tease 
+            | Request to order furniture
+        .contacts-form
+            form.form(action='' method="POST")
+                .form-row 
+                    input.input(type="text" name="name" placeholder=" ")
+                    label.input-label Name
+                    .highlight
+                .form-row 
+                    input.input#phone(type="tel" name="phone")
+                    .highlight
+                .form-row
+                    +button({classes: "button", type: "submit"}) Send
+                    p.data-agreement
+                        | By clicking the button, you agree to the 
+                        a.gold(href="https://www.google.com") personal data processing

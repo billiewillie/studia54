@@ -1,0 +1,40 @@
+include ../mixins/sectionHeader
+
+.production
+    .production-pic
+        picture
+            img.production-pic__bg(src="./img/production-bg.jpg", alt="production", loading="lazy", width="100%", height="100%")
+    .container
+        .production-header
+            +sectionHeader("", "Production 54")
+            p.production-description
+                span.gold Production 54 
+                | is a big multifunctional manufacture of luxurious furniture located in the heart of Saint&#8209;Petersburg. 
+                | The production unit of the head company Studia 54 was founded in 2019 to develop our own brand of unique design 
+                | furniture and to produce turnkey customized products as a part of our products realization all around the world. 
+    .production-slider 
+        .swiper-wrapper
+            .swiper-slide
+                .pic
+                    picture
+                        img(src="./img/production-1.jpg", alt="production1", loading="lazy")
+                .text 
+                    h4.title.gold Solid wood processing
+                    p All the work with materials, including painting, is done by hand
+
+            .swiper-slide
+                .pic
+                    picture
+                        img(src="./img/production-2.jpg", alt="production2", loading="lazy")
+                .text 
+                    h4.title.gold Preparing panels for painting
+                    p All the work with materials, including painting, is done by hand
+            .swiper-slide
+                .pic
+                    picture
+                        img(src="./img/production-3.jpg", alt="production3", loading="lazy")
+                .text
+                    h4.title.gold Fabric panels gluing
+                    p High tech production allows to work with various materials
+        .swiper-button-next.md-visible(style="background-image: url('../../img/slider-arrow.svg');")
+        .swiper-button-prev.lg-visible(style="background-image: url('../../img/slider-arrow.svg');")

@@ -1,0 +1,11 @@
+include ../mixins/button
+
+.first-screen.snap
+    .video
+        video#video(autoplay playsinline)
+    .container
+        h1.title 
+            span.left Furniture that inspires 
+            span.right a new lifestyle
+        +button({to:"#catalog", classes: "button-black md-visible"}) Shop now
+        +button({to:"#catalog", classes: "button md-hidden"}) Shop now

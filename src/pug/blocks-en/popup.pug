@@ -2,13 +2,13 @@
   .popup-overlay
   .popup-content 
     a.close(style="background-image: url(./img/close.svg);")
-    h2.gold Become one step closer to your dream furniture
-    p Leave your contacts in the form below. We will call you back during working hours and help pick up a product
+    h2.gold Будьте на шаг ближе к мебели мечты
+    p Оставьте свои контактные данные в форме ниже. Мы перезвоним вам в рабочее время и поможем подобрать изделие
     .popup-form
       form.form(action='' method="POST")
         .form-row 
           input.input(type="text" name="name" placeholder=" ")
-          label.input-label Name
+          label.input-label Имя
           .highlight
         .form-row 
           input.input#phone-popup(type="tel" name="phone")
@@ -20,7 +20,7 @@
         .form-row
             +button({classes: "button", type: "submit"}) Отправить
             p.data-agreement
-              | By clicking the button, you agree to the 
-              a.gold(href="https://www.google.com") personal data processing
+              | Нажимая на кнопку, вы соглашаетесь 
+              a.gold(href="https://www.google.com") на обработку персональных данных
 
 

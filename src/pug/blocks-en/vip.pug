@@ -1,0 +1,122 @@
+include ../mixins/sectionHeader
+
+.vip#vip
+  .container
+    +sectionHeader("vip", "Limited edition")
+
+  .vip-content
+    .vip-pic
+      picture
+        source(media="(min-width: 768px)", srcset="./img/room-big.jpg")
+        source(srcset="./img/room.webp", type="image/webp")
+        img(src="./img/room.jpg", alt="room", loading="lazy", width="100%", height="100%")
+    .vip-text
+      h3.text-title.gold Exclusive limited products
+      p.text 
+        | Successful professional solutions and ideas start with the right environment. 
+        b Ergonomic and stylish, a personally selected desktop 
+        | not only stimulates productive work, but also reflects its owner’s character. 
+        | Choose a unique product or customize it. 
+  .vip-builder
+    .container 
+      .builder-pics
+        .builder-pics__item.woodstock
+          img(src="../../img/woodstock_eben.png")
+        .builder-pics__item.aida
+          img(src="../../img/aida_black.png")
+        .builder-pics__item.inside
+          img(src="../../img/aida_sand_inside.png")
+
+  .vip-options
+    .container
+      p.vip-options__title Customizing parameters:
+      .vip-options__block
+        .vip-options__column
+          p.vip-options__column-title.md-visible Countertop
+          ul.vip-options__list.md-visible
+            li.option.active(data-image='woodstock_eben-2', data-category="woodstock")
+              .option-pic(style="background-image: url('../../img/vip-example-11.jpg')")
+              .option-about
+                p.option-about__title Eben 5
+                p.option-about__description natural veneer
+            li.option(data-image='woodstock_koto', data-category="woodstock")
+              .option-pic(style="background-image: url('../../img/vip-example-12.jpg')")
+              .option-about
+                p.option-about__title KOTO
+                p.option-about__description natural veneer
+            li.option(data-image='woodstock_eben', data-category="woodstock")
+              .option-pic(style="background-image: url('../../img/vip-example-13.jpg')")
+              .option-about
+                p.option-about__title EBEN MN
+                p.option-about__description natural veneer
+            li.option(data-image='woodstock_evkalipt', data-category="woodstock")
+              .option-pic(style="background-image: url('../../img/vip-example-14.jpg')")
+              .option-about
+                p.option-about__title Eucalyptus
+                p.option-about__description natural veneer
+            li.option(data-image='woodstock_orex', data-category="woodstock")
+              .option-pic(style="background-image: url('../../img/vip-example-15.jpg')")
+              .option-about
+                p.option-about__title Nut Root
+                p.option-about__description natural veneer
+        .vip-options__column
+          p.vip-options__column-title.md-visible Corpus
+          ul.vip-options__list.md-visible
+            li.option.active(data-image='aida_black', data-category="aida")
+              .option-pic(style="background-image: url('../../img/vip-example-21.jpg')")
+              .option-about
+                p.option-about__title Black ink
+                p.option-about__description natural leather
+            li.option(data-image='aida_spruce', data-category="aida")
+              .option-pic(style="background-image: url('../../img/vip-example-22.jpg')")
+              .option-about
+                p.option-about__title Spruce
+                p.option-about__description natural leather
+            li.option(data-image='aida_grey', data-category="aida")
+              .option-pic(style="background-image: url('../../img/vip-example-23.jpg')")
+              .option-about
+                p.option-about__title Grey
+                p.option-about__description natural leather
+            li.option(data-image='aida_blackberry', data-category="aida")
+              .option-pic(style="background-image: url('../../img/vip-example-24.jpg')")
+              .option-about
+                p.option-about__title Blackberry
+                p.option-about__description natural leather
+        .vip-options__column
+          p.vip-options__column-title.md-visible The inner side of the table
+          ul.vip-options__list.md-visible
+            li.option.active(data-image='aida_saddle_inside', data-category="inside")
+              .option-pic(style="background-image: url('../../img/vip-example-31.jpg')")
+              .option-about
+                p.option-about__title Saddle
+                p.option-about__description natural leather
+            li.option(data-image='aida_grey_inside', data-category="inside")
+              .option-pic(style="background-image: url('../../img/vip-example-32.jpg')")
+              .option-about
+                p.option-about__title Sand
+                p.option-about__description natural leather
+            li.option(data-image='aida_ash_inside', data-category="inside")
+              .option-pic(style="background-image: url('../../img/vip-example-33.jpg')")
+              .option-about
+                p.option-about__title Ash
+                p.option-about__description natural leather
+            li.option(data-image='aida_sand_inside', data-category="inside")
+              .option-pic(style="background-image: url('../../img/vip-example-34.jpg')")
+              .option-about
+                p.option-about__title Grey
+                p.option-about__description natural leather
+        .vip-options__column.md-visible
+          p.vip-options__column-title Hardware
+          ul.vip-options__list
+            li.option.active
+              .option-pic(style="background-image: url('../../img/vip-example-4.jpg')")
+              .option-about
+                p.option-about__title Floristry
+                p.option-about__description customization
+  .vip-footer
+    .container
+      p 
+        span.gold Emphasize your status 
+        | and set up your work rhythm
+      button.button#popup-open
+        | Shop now

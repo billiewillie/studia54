@@ -397,7 +397,7 @@
 	}
 
 	& .navigation__lang-link {
-		&:first-child {
+		&.active {
 			color: var(--gold);
 		}
 	}
